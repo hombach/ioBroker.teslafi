@@ -83,7 +83,9 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 ### **WORK IN PROGRESS**
 
 - (hombach) optimize dependabot config (#209)
+- (hombach) year 2026 changes
 - (hombach) update axios
+- (hombach) update dependencies
 
 ### 2.0.4 (2025-10-22)
 
