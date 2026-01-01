@@ -1,6 +1,6 @@
 {
   "name": "iobroker.teslafi",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Adapter to poll TeslaFi data of your car",
   "author": {
     "name": "Hombach",

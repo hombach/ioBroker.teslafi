@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "teslafi",
-    "version": "2.0.4",
+    "version": "2.0.5",
     "news": {
+      "2.0.5": {
+        "en": "optimize dependabot config (#209)\nyear 2026 changes\nupdate axios\nupdate dependencies",
+        "de": "optimieren abhängigabot config (#209)\njahr 2026 änderungen\naxios\naktualisierung der abhängigkeiten",
+        "ru": "оптимизируйте конфигурацию зависимого робота (#209)\n2026 год изменения\nобновление axios\nобновление зависимостей",
+        "pt": "otimizar a configuração do dependebot (# 209)\nvariações do ano de 2026\natualizar axios\natualizar dependências",
+        "nl": "dependabot config optimaliseren (#209)\njaar 2026 veranderingen\naxios bijwerken\nafhankelijkheden bijwerken",
+        "fr": "optimiser la configuration de base (#209)\nannée 2026 changements\nmettre à jour axios\nmettre à jour les dépendances",
+        "it": "ottimizzare la configurazione dipendeabot (#209)\nanno 2026 modifiche\naggiornamento assio\naggiornamento dipendenze",
+        "es": "optimizar config de dependabot (#209)\naño 2026 cambios\nactualización axios\ndependencias de actualización",
+        "pl": "optymalizacja konfiguracji zależnej (# 209)\nrok 2026 zmiany\naktualizacja axios\naktualizacji zależności",
+        "uk": "оптимізація налаштування залежностей (#209)\nрік 2026 змін\nоновлення axios\nоновлення залежності",
+        "zh-cn": "优化依赖配置 (# 209)\n2026年的变化\n更新轴线\n更新依赖关系"
+      },
       "2.0.4": {
         "en": "upgrade NPM deployment system\nbump dependencies",
         "de": "nPM Bereitstellung System\nbumpabhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "dodać zestaw temperatury HVAC (# 121)\npotwierdź polecenia po wysłaniu do TeslaFi\ndodaj stan liczenia poleceń (# 127)\ndodaj polecenia zestawu podgrzewacza siedzenia (# 121)",
         "uk": "доданий набір температури HVAC (#121)\nвизначте команди після відправки в TeslaFi\nadd commands count state (#127)\nдодано набір команд нагрівача сидіння (#121)",
         "zh-cn": "添加成套HVAC温度(# 121)\n发送到 TeslaFi 后确认命令\n添加命令计数状态 (# 127)\n添加座位加热器命令( # 121)"
-      },
-      "1.4.0": {
-        "en": "add charge limit commands (#121)\nadd statevalue range to projectUtils",
-        "de": "Befehle zur Ladebegrenzung hinzufügen (#121)\nZustandswertbereich zu projectUtils hinzugefügt",
-        "ru": "добавить команды ограничения заряда (#121)\nдобавить диапазон значений состояния в проект утиль",
-        "pt": "adicionar comandos de limite de carga (#121)\nadicionar intervalo de valor de estado ao projeto Utilidades",
-        "nl": "laden limiet commando's toevoegen (#121)\nstatuswaardebereik toevoegen aan project Utils",
-        "fr": "ajouter des commandes limites de charge (#121)\najouter une plage de valeur d'état au projet Utilisation",
-        "it": "aggiungere comandi limite di carica (#121)\naggiungere la gamma di valore di stato al progetto Utili",
-        "es": "añadir comandos límite de carga (#121)\nañadir rango de valor estatal al proyecto Utils",
-        "pl": "dodaj polecenia limitu ładunku (# 121)\ndodaj zakres stanu do projektu Przyrządy",
-        "uk": "додавати команди ліміту заряду (#121)\nдодати діапазон державного значення для проекту Утили",
-        "zh-cn": "添加电荷限制命令 (# 121)\n为工程添加状态值范围 UTIs 数字"
       }
     },
     "titleLang": {
