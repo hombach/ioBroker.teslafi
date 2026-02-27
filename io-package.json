@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "teslafi",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "news": {
+      "2.0.6": {
+        "en": "update axios\nupdate dependencies",
+        "de": "axios\naktualisierung der abhängigkeiten",
+        "ru": "обновление axios\nобновление зависимостей",
+        "pt": "atualizar axios\natualizar dependências",
+        "nl": "axios bijwerken\nafhankelijkheden bijwerken",
+        "fr": "mettre à jour axios\nmettre à jour les dépendances",
+        "it": "aggiornamento assio\naggiornamento dipendenze",
+        "es": "actualización axios\ndependencias de actualización",
+        "pl": "aktualizacja axios\naktualizacji zależności",
+        "uk": "оновлення axios\nоновлення залежності",
+        "zh-cn": "更新轴线\n更新依赖关系"
+      },
       "2.0.5": {
         "en": "optimize dependabot config (#209)\nyear 2026 changes\nupdate axios\nupdate dependencies",
         "de": "optimieren abhängigabot config (#209)\njahr 2026 änderungen\naxios\naktualisierung der abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "BREAKING: Upuszczone wsparcie dla Node.js 18 (# 135)\nBREAKING: Upuszczone wsparcie sterownika js- 5 (# 135)\nuzależnienia od guza",
         "uk": "BREAKING: Dropped підтримка для Node.js 18 (#135)\nBREAKING: Dropped підтримка для js-controller 5 (#135)\nbump залежності",
         "zh-cn": "BREEAKING:已放弃对Node.js 18(# 135)的支持\n中断 : js 控制器 5 (# 135) 已放弃支持\n意外依赖"
-      },
-      "1.5.0": {
-        "en": "add set HVAC temperature (#121)\nacknowledge commands after sending to TeslaFi\nadd commands count state (#127)\nadd set seat heater commands (#121)",
-        "de": "hVAC-Temperatur hinzufügen (#121)\nbefehle nach dem Senden an TeslaFi anerkennen\nbefehle hinzufügen zählzustand (#127)\nset sitzheizungsbefehle hinzufügen (#121)",
-        "ru": "установить температуру HVAC (#121)\nпринять команды после отправки в TeslaFi\nдобавить команду count state (#127)\nдобавить команды обогревателя сидений (#121)",
-        "pt": "adicionar temperatura HVAC definida (#121)\nreconhecer comandos depois de enviar para TeslaFi\nadicionar comandos count state (#127)\nadicionar comandos de aquecedor de assento fixo (#121)",
-        "nl": "set HVAC-temperatuur toevoegen (#121)\nerkende opdrachten na het verzenden naar TeslaFi\ncommando's tellen status toevoegen (#127)\nset seat heater commando's toevoegen (#121)",
-        "fr": "ajouter le réglage de la température CVC (#121)\nreconnaître les commandes après l'envoi à TeslaFi\najouter l'état du nombre de commandes (#127)\najouter des commandes de chauffage de siège (#121)",
-        "it": "aggiungere la temperatura HVAC impostata (#121)\nriconoscere i comandi dopo l'invio a TeslaFi\naggiungere i comandi conteggio stato (#127)\naggiungere comandi di riscaldamento del sedile (#121)",
-        "es": "añadir el conjunto HVAC temperatura (#121)\nreconocer comandos después de enviar a TeslaFi\nañadir comandos contar estado (#127)\nañadir comandos de calentador de asiento (#121)",
-        "pl": "dodać zestaw temperatury HVAC (# 121)\npotwierdź polecenia po wysłaniu do TeslaFi\ndodaj stan liczenia poleceń (# 127)\ndodaj polecenia zestawu podgrzewacza siedzenia (# 121)",
-        "uk": "доданий набір температури HVAC (#121)\nвизначте команди після відправки в TeslaFi\nadd commands count state (#127)\nдодано набір команд нагрівача сидіння (#121)",
-        "zh-cn": "添加成套HVAC温度(# 121)\n发送到 TeslaFi 后确认命令\n添加命令计数状态 (# 127)\n添加座位加热器命令( # 121)"
       }
     },
     "titleLang": {
