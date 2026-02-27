@@ -80,6 +80,10 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
   ### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS**
+
+- (hombach) update axios
+- (hombach) update dependencies
 
 ### 2.0.5 (2026-01-01)
 
