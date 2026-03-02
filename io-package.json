@@ -1,222 +1,209 @@
 {
-  "common": {
-    "name": "teslafi",
-    "version": "2.0.6",
-    "news": {
-      "2.0.6": {
-        "en": "update axios\nupdate dependencies",
-        "de": "axios\naktualisierung der abhängigkeiten",
-        "ru": "обновление axios\nобновление зависимостей",
-        "pt": "atualizar axios\natualizar dependências",
-        "nl": "axios bijwerken\nafhankelijkheden bijwerken",
-        "fr": "mettre à jour axios\nmettre à jour les dépendances",
-        "it": "aggiornamento assio\naggiornamento dipendenze",
-        "es": "actualización axios\ndependencias de actualización",
-        "pl": "aktualizacja axios\naktualizacji zależności",
-        "uk": "оновлення axios\nоновлення залежності",
-        "zh-cn": "更新轴线\n更新依赖关系"
-      },
-      "2.0.5": {
-        "en": "optimize dependabot config (#209)\nyear 2026 changes\nupdate axios\nupdate dependencies",
-        "de": "optimieren abhängigabot config (#209)\njahr 2026 änderungen\naxios\naktualisierung der abhängigkeiten",
-        "ru": "оптимизируйте конфигурацию зависимого робота (#209)\n2026 год изменения\nобновление axios\nобновление зависимостей",
-        "pt": "otimizar a configuração do dependebot (# 209)\nvariações do ano de 2026\natualizar axios\natualizar dependências",
-        "nl": "dependabot config optimaliseren (#209)\njaar 2026 veranderingen\naxios bijwerken\nafhankelijkheden bijwerken",
-        "fr": "optimiser la configuration de base (#209)\nannée 2026 changements\nmettre à jour axios\nmettre à jour les dépendances",
-        "it": "ottimizzare la configurazione dipendeabot (#209)\nanno 2026 modifiche\naggiornamento assio\naggiornamento dipendenze",
-        "es": "optimizar config de dependabot (#209)\naño 2026 cambios\nactualización axios\ndependencias de actualización",
-        "pl": "optymalizacja konfiguracji zależnej (# 209)\nrok 2026 zmiany\naktualizacja axios\naktualizacji zależności",
-        "uk": "оптимізація налаштування залежностей (#209)\nрік 2026 змін\nоновлення axios\nоновлення залежності",
-        "zh-cn": "优化依赖配置 (# 209)\n2026年的变化\n更新轴线\n更新依赖关系"
-      },
-      "2.0.4": {
-        "en": "upgrade NPM deployment system\nbump dependencies",
-        "de": "nPM Bereitstellung System\nbumpabhängigkeiten",
-        "ru": "модернизация системы развертывания NPM\nбамп зависимости",
-        "pt": "atualizar sistema de implantação NPM\ndependências de colisão",
-        "nl": "upgrade NPM-implementatiesysteem\nbump afhankelijkheden",
-        "fr": "mise à niveau du système de déploiement NPM\ndépendances des bosses",
-        "it": "aggiornare il sistema di distribuzione NPM\nindipendenza urto",
-        "es": "actualización del sistema de despliegue del mecanismo nacional de prevención\ndependencia de los gastos",
-        "pl": "aktualizacja systemu wdrażania NPM\nuzależnienia od guza",
-        "uk": "оновлення системи розгортання NPM\nbump залежності",
-        "zh-cn": "改进国家预防机制的部署系统\n意外依赖"
-      },
-      "2.0.3": {
-        "en": "remove allowInit (#181)\nfix schema URL for jsonConfig (#181)\nupdate chai system\nbump dependencies",
-        "de": "entfernen zulassenInit (#181)\nschema URL für jsonConfig (#181)\nchai system\nbumpabhängigkeiten",
-        "ru": "удалить LetInit (#181)\nисправить URL схемы для jsonConfig (#181)\nобновление системы chai\nбамп зависимости",
-        "pt": "remover allowInit (# 181)\ncorrigir o URL do esquema para o jsonConfig (# 181)\natualizar sistema chai\ndependências de colisão",
-        "nl": "verwijderen allowInit (#181)\nfix schema URL voor jsonConfig (#181)\nchai-systeem bijwerken\nbump afhankelijkheden",
-        "fr": "supprimer allowInit (#181)\ncorriger l'URL du schéma pour jsonConfig (#181)\nmettre à jour le système chai\ndépendances des bosses",
-        "it": "rimuovere consentInit (#181)\nfix schema URL per jsonConfig (#181)\naggiornamento sistema chai\nindipendenza urto",
-        "es": "remove allowInit (#181)\nschema URL para jsonConfig (#181)\nactualización del sistema chai\ndependencia de los gastos",
-        "pl": "usunąć allowInit (# 181)\nfix schema URL dla jsonConfig (# 181)\naktualizacja systemu chai\nuzależnienia od guza",
-        "uk": "прибрати припускПримітка (#181)\nfix schema URL для jsonConfig (#181)\nоновлення системи chai\nbump залежності",
-        "zh-cn": "删除允许的Init(# 181)\njsonConfig (# 181) 的固定方案 URL\n更新 chai 系统\n意外依赖"
-      },
-      "2.0.2": {
-        "en": "admin 7.6.17 recommended by ioBroker (#166)\nbumb adapter-core to 3.3.2 (#166)\nfix vulnerability\nbump dependencies",
-        "de": "admin 7.6.17 empfohlen von ioBroker (#166)\nbumb adapter-kern auf 3.3.2 (#166)\nfehlerbehebung\nbumpabhängigkeiten",
-        "ru": "admin 7.6.17, рекомендованный ioBroker (#166)\nbumb adapter-core для 3.3.2 (#166)\nисправить уязвимость\nбамп зависимости",
-        "pt": "admin 7.6.17 recomendado por ioBroker (# 166)\nbumb adaptador-core para 3.3.2 (# 166)\ncorrigir vulnerabilidade\ndependências de colisão",
-        "nl": "aanbevolen door ioBroker (#166)\nbumb adapter-core to 3.3.2 (#166)\nkwetsbaarheid herstellen\nbump afhankelijkheden",
-        "fr": "admin 7.6.17 recommandé par ioBroker (#166)\nadaptateur-noyau à 3.3.2 (#166)\nfixer la vulnérabilité\ndépendances des bosses",
-        "it": "admin 7.6.17 consigliato da ioBroker (#166)\nbumb adapter-core a 3.3.2 (#166)\ncorrezione della vulnerabilità\nindipendenza urto",
-        "es": "admin 7.6.17 recomendado por ioBroker (#166)\nomb adaptador-core a 3.3.2 (#166)\ncorrección de vulnerabilidad\ndependencia de los gastos",
-        "pl": "administrator 7.6.17 polecany przez joBroker (# 166)\nadapter trzpienia - rdzeń do 3.3.2 (# 166)\nnaprawić podatność\nuzależnienia od guza",
-        "uk": "admin 7.6.17 Рекомендований ioBroker (#166)\nenglish, українська, français..\nвиправити вразливість\nbump залежності",
-        "zh-cn": "ioBroker建议的admin 7.6.17 (# 166)\nburb 适配器核心为 3.3.2 (# 166)\n消除脆弱性\n意外依赖"
-      },
-      "2.0.1": {
-        "en": "add node.js 24 tests (#144)\nbump dependencies",
-        "de": "node.js 24 tests hinzufügen (#144)\nbump-abhängigkeit",
-        "ru": "добавить node.js 24 тестов (#144)\nбамп зависимости",
-        "pt": "add node.js 24 tests (#144)\ndependências de colisão",
-        "nl": "node.js 24 testen toevoegen (#144)\nbump afhankelijkheden",
-        "fr": "ajouter les tests node.js 24 (#144)\ndépendances des bosses",
-        "it": "aggiungere node.js 24 test (#144)\nindipendenza urto",
-        "es": "añadir node.js 24 pruebas (#144)\ndependencia de los gastos",
-        "pl": "dodaj node.js 24 testy (# 144)\nuzależnienia od guza",
-        "uk": "add node.js 24 тести (#144)\nbump залежності",
-        "zh-cn": "添加节点.js 24个测试(# 144)\n意外依赖"
-      },
-      "2.0.0": {
-        "en": "BREAKING: Dropped support for Node.js 18 (#135)\nBREAKING: Dropped support for js-controller 5 (#135)\nbump dependencies",
-        "de": "BREAKING: Unterlassene Unterstützung für Node.js 18 (#135)\nBREAKING: Dropped-Unterstützung für js-controller 5 (#135)\nbumpabhängigkeiten",
-        "ru": "Отказ от поддержки Node.js 18 (#135)\nОтказ от поддержки js-контроллера 5 (#135)\nбамп зависимости",
-        "pt": "BREAKING: Suporte para o Node.js 18 (#135)\nBREAKING: Suporte para js-controller 5 (#135)\ndependências de choque",
-        "nl": "BREAKING: Dropped support for Node.js 18 (#135)\nBreaking: Dropped support for js-controller 5 (#135)\nbump afhankelijkheden",
-        "fr": "Soutien abandonné pour Node.js 18 (#135)\nSupport abandonné pour le contrôleur de js 5 (#135)\ndépendances des bosses",
-        "it": "BREAKING: Supporto a goccia per Node.js 18 (#135)\nBREAKING: Supporto a goccia per js-controller 5 (#135)\nindipendenza urto",
-        "es": "BREAKING: Soporte abandonado para Node.js 18 (#135)\nBREAKING: Soporte desechado para js-controller 5 (#135)\ndependencia de los gastos",
-        "pl": "BREAKING: Upuszczone wsparcie dla Node.js 18 (# 135)\nBREAKING: Upuszczone wsparcie sterownika js- 5 (# 135)\nuzależnienia od guza",
-        "uk": "BREAKING: Dropped підтримка для Node.js 18 (#135)\nBREAKING: Dropped підтримка для js-controller 5 (#135)\nbump залежності",
-        "zh-cn": "BREEAKING:已放弃对Node.js 18(# 135)的支持\n中断 : js 控制器 5 (# 135) 已放弃支持\n意外依赖"
-      }
-    },
-    "titleLang": {
-      "en": "TeslaFi",
-      "de": "TeslaFi",
-      "ru": "TeslaFi",
-      "pt": "TeslaFi",
-      "nl": "TeslaFi",
-      "fr": "TeslaFi",
-      "it": "TeslaFi",
-      "es": "TeslaFi",
-      "pl": "TeslaFi",
-      "uk": "TeslaFi",
-      "zh-cn": "TeslaFi"
-    },
-    "desc": {
-      "en": "Adapter to poll TeslaFi data of your car",
-      "de": "Adapter zum Abrufen von TeslaFi-Daten Ihres Autos",
-      "ru": "Адаптер для опроса данных TeslaFi вашего автомобиля",
-      "pt": "Adaptador para consultar os dados do TeslaFi do seu carro",
-      "nl": "Adapter om TeslaFi-gegevens van uw auto op te halen",
-      "fr": "Adaptateur pour interroger les données TeslaFi de votre voiture",
-      "it": "Adattatore per recuperare i dati TeslaFi della tua auto",
-      "es": "Adaptador para consultar los datos de TeslaFi de su coche",
-      "pl": "Adapter do pobierania danych TeslaFi z Twojego samochodu",
-      "uk": "Адаптер для опитування даних TeslaFi вашого автомобіля",
-      "zh-cn": "适配器，用于轮询您的汽车的 TeslaFi 数据"
-    },
-    "authors": [
-      "Hombach <TeslaFi@homba.ch>"
-    ],
-    "keywords": [
-      "TeslaFi",
-      "Tesla",
-      "EV",
-      "Car"
-    ],
-    "licenseInformation": {
-      "license": "MIT",
-      "type": "free"
-    },
-    "platform": "Javascript/Node.js",
-    "icon": "teslafi.png",
-    "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/Hombach/ioBroker.teslafi/master/admin/teslafi.png",
-    "readme": "https://github.com/Hombach/ioBroker.teslafi/blob/master/README.md",
-    "loglevel": "info",
-    "tier": 2,
-    "mode": "daemon",
-    "messagebox": true,
-    "type": "vehicle",
-    "compact": true,
-    "connectionType": "cloud",
-    "dataSource": "poll",
-    "adminUI": {
-      "config": "json"
-    },
-    "dependencies": [
-      {
-        "js-controller": ">=6.0.11"
-      }
-    ],
-    "globalDependencies": [
-      {
-        "admin": ">=7.6.17"
-      }
-    ],
-    "plugins": {
-      "sentry": {
-        "dsn": "https://4635ed7e9381822a788a043a6e94e594@o415875.ingest.us.sentry.io/4508182233284608"
-      }
-    },
-    "supportCustoms": false
-  },
-  "encryptedNative": [
-    "TeslaFiAPIToken",
-    "teslafiapitokenpass"
-  ],
-  "protectedNative": [
-    "TeslaFiAPIToken",
-    "teslafiapitokenpass"
-  ],
-  "native": {
-    "teslafiapitokenpass": "",
-    "TeslaFiAPIToken": "",
-    "UpdateInterval": "60",
-    "UpdateTimeout": 5000
-  },
-  "objects": [],
-  "instanceObjects": [
-    {
-      "_id": "info",
-      "type": "channel",
-      "common": {
-        "name": "Information"
-      },
-      "native": {}
-    },
-    {
-      "_id": "info.connection",
-      "type": "state",
-      "common": {
-        "role": "indicator.connected",
-        "name": "Device or service connected",
-        "type": "boolean",
-        "read": true,
-        "write": false,
-        "def": false
-      },
-      "native": {}
-    },
-    {
-      "_id": "info.LastSentryLogDay",
-      "type": "state",
-      "common": {
-        "role": "value",
-        "name": "Last day of month for Sentry log",
-        "type": "number",
-        "unit": "",
-        "read": true,
-        "write": false,
-        "def": 0
-      },
-      "native": {}
-    }
-  ]
+	"common": {
+		"name": "teslafi",
+		"version": "2.0.6",
+		"news": {
+			"2.0.6": {
+				"en": "update axios\nupdate dependencies",
+				"de": "axios\naktualisierung der abhängigkeiten",
+				"ru": "обновление axios\nобновление зависимостей",
+				"pt": "atualizar axios\natualizar dependências",
+				"nl": "axios bijwerken\nafhankelijkheden bijwerken",
+				"fr": "mettre à jour axios\nmettre à jour les dépendances",
+				"it": "aggiornamento assio\naggiornamento dipendenze",
+				"es": "actualización axios\ndependencias de actualización",
+				"pl": "aktualizacja axios\naktualizacji zależności",
+				"uk": "оновлення axios\nоновлення залежності",
+				"zh-cn": "更新轴线\n更新依赖关系"
+			},
+			"2.0.5": {
+				"en": "optimize dependabot config (#209)\nyear 2026 changes\nupdate axios\nupdate dependencies",
+				"de": "optimieren abhängigabot config (#209)\njahr 2026 änderungen\naxios\naktualisierung der abhängigkeiten",
+				"ru": "оптимизируйте конфигурацию зависимого робота (#209)\n2026 год изменения\nобновление axios\nобновление зависимостей",
+				"pt": "otimizar a configuração do dependebot (# 209)\nvariações do ano de 2026\natualizar axios\natualizar dependências",
+				"nl": "dependabot config optimaliseren (#209)\njaar 2026 veranderingen\naxios bijwerken\nafhankelijkheden bijwerken",
+				"fr": "optimiser la configuration de base (#209)\nannée 2026 changements\nmettre à jour axios\nmettre à jour les dépendances",
+				"it": "ottimizzare la configurazione dipendeabot (#209)\nanno 2026 modifiche\naggiornamento assio\naggiornamento dipendenze",
+				"es": "optimizar config de dependabot (#209)\naño 2026 cambios\nactualización axios\ndependencias de actualización",
+				"pl": "optymalizacja konfiguracji zależnej (# 209)\nrok 2026 zmiany\naktualizacja axios\naktualizacji zależności",
+				"uk": "оптимізація налаштування залежностей (#209)\nрік 2026 змін\nоновлення axios\nоновлення залежності",
+				"zh-cn": "优化依赖配置 (# 209)\n2026年的变化\n更新轴线\n更新依赖关系"
+			},
+			"2.0.4": {
+				"en": "upgrade NPM deployment system\nbump dependencies",
+				"de": "nPM Bereitstellung System\nbumpabhängigkeiten",
+				"ru": "модернизация системы развертывания NPM\nбамп зависимости",
+				"pt": "atualizar sistema de implantação NPM\ndependências de colisão",
+				"nl": "upgrade NPM-implementatiesysteem\nbump afhankelijkheden",
+				"fr": "mise à niveau du système de déploiement NPM\ndépendances des bosses",
+				"it": "aggiornare il sistema di distribuzione NPM\nindipendenza urto",
+				"es": "actualización del sistema de despliegue del mecanismo nacional de prevención\ndependencia de los gastos",
+				"pl": "aktualizacja systemu wdrażania NPM\nuzależnienia od guza",
+				"uk": "оновлення системи розгортання NPM\nbump залежності",
+				"zh-cn": "改进国家预防机制的部署系统\n意外依赖"
+			},
+			"2.0.3": {
+				"en": "remove allowInit (#181)\nfix schema URL for jsonConfig (#181)\nupdate chai system\nbump dependencies",
+				"de": "entfernen zulassenInit (#181)\nschema URL für jsonConfig (#181)\nchai system\nbumpabhängigkeiten",
+				"ru": "удалить LetInit (#181)\nисправить URL схемы для jsonConfig (#181)\nобновление системы chai\nбамп зависимости",
+				"pt": "remover allowInit (# 181)\ncorrigir o URL do esquema para o jsonConfig (# 181)\natualizar sistema chai\ndependências de colisão",
+				"nl": "verwijderen allowInit (#181)\nfix schema URL voor jsonConfig (#181)\nchai-systeem bijwerken\nbump afhankelijkheden",
+				"fr": "supprimer allowInit (#181)\ncorriger l'URL du schéma pour jsonConfig (#181)\nmettre à jour le système chai\ndépendances des bosses",
+				"it": "rimuovere consentInit (#181)\nfix schema URL per jsonConfig (#181)\naggiornamento sistema chai\nindipendenza urto",
+				"es": "remove allowInit (#181)\nschema URL para jsonConfig (#181)\nactualización del sistema chai\ndependencia de los gastos",
+				"pl": "usunąć allowInit (# 181)\nfix schema URL dla jsonConfig (# 181)\naktualizacja systemu chai\nuzależnienia od guza",
+				"uk": "прибрати припускПримітка (#181)\nfix schema URL для jsonConfig (#181)\nоновлення системи chai\nbump залежності",
+				"zh-cn": "删除允许的Init(# 181)\njsonConfig (# 181) 的固定方案 URL\n更新 chai 系统\n意外依赖"
+			},
+			"2.0.2": {
+				"en": "admin 7.6.17 recommended by ioBroker (#166)\nbumb adapter-core to 3.3.2 (#166)\nfix vulnerability\nbump dependencies",
+				"de": "admin 7.6.17 empfohlen von ioBroker (#166)\nbumb adapter-kern auf 3.3.2 (#166)\nfehlerbehebung\nbumpabhängigkeiten",
+				"ru": "admin 7.6.17, рекомендованный ioBroker (#166)\nbumb adapter-core для 3.3.2 (#166)\nисправить уязвимость\nбамп зависимости",
+				"pt": "admin 7.6.17 recomendado por ioBroker (# 166)\nbumb adaptador-core para 3.3.2 (# 166)\ncorrigir vulnerabilidade\ndependências de colisão",
+				"nl": "aanbevolen door ioBroker (#166)\nbumb adapter-core to 3.3.2 (#166)\nkwetsbaarheid herstellen\nbump afhankelijkheden",
+				"fr": "admin 7.6.17 recommandé par ioBroker (#166)\nadaptateur-noyau à 3.3.2 (#166)\nfixer la vulnérabilité\ndépendances des bosses",
+				"it": "admin 7.6.17 consigliato da ioBroker (#166)\nbumb adapter-core a 3.3.2 (#166)\ncorrezione della vulnerabilità\nindipendenza urto",
+				"es": "admin 7.6.17 recomendado por ioBroker (#166)\nomb adaptador-core a 3.3.2 (#166)\ncorrección de vulnerabilidad\ndependencia de los gastos",
+				"pl": "administrator 7.6.17 polecany przez joBroker (# 166)\nadapter trzpienia - rdzeń do 3.3.2 (# 166)\nnaprawić podatność\nuzależnienia od guza",
+				"uk": "admin 7.6.17 Рекомендований ioBroker (#166)\nenglish, українська, français..\nвиправити вразливість\nbump залежності",
+				"zh-cn": "ioBroker建议的admin 7.6.17 (# 166)\nburb 适配器核心为 3.3.2 (# 166)\n消除脆弱性\n意外依赖"
+			},
+			"2.0.1": {
+				"en": "add node.js 24 tests (#144)\nbump dependencies",
+				"de": "node.js 24 tests hinzufügen (#144)\nbump-abhängigkeit",
+				"ru": "добавить node.js 24 тестов (#144)\nбамп зависимости",
+				"pt": "add node.js 24 tests (#144)\ndependências de colisão",
+				"nl": "node.js 24 testen toevoegen (#144)\nbump afhankelijkheden",
+				"fr": "ajouter les tests node.js 24 (#144)\ndépendances des bosses",
+				"it": "aggiungere node.js 24 test (#144)\nindipendenza urto",
+				"es": "añadir node.js 24 pruebas (#144)\ndependencia de los gastos",
+				"pl": "dodaj node.js 24 testy (# 144)\nuzależnienia od guza",
+				"uk": "add node.js 24 тести (#144)\nbump залежності",
+				"zh-cn": "添加节点.js 24个测试(# 144)\n意外依赖"
+			},
+			"2.0.0": {
+				"en": "BREAKING: Dropped support for Node.js 18 (#135)\nBREAKING: Dropped support for js-controller 5 (#135)\nbump dependencies",
+				"de": "BREAKING: Unterlassene Unterstützung für Node.js 18 (#135)\nBREAKING: Dropped-Unterstützung für js-controller 5 (#135)\nbumpabhängigkeiten",
+				"ru": "Отказ от поддержки Node.js 18 (#135)\nОтказ от поддержки js-контроллера 5 (#135)\nбамп зависимости",
+				"pt": "BREAKING: Suporte para o Node.js 18 (#135)\nBREAKING: Suporte para js-controller 5 (#135)\ndependências de choque",
+				"nl": "BREAKING: Dropped support for Node.js 18 (#135)\nBreaking: Dropped support for js-controller 5 (#135)\nbump afhankelijkheden",
+				"fr": "Soutien abandonné pour Node.js 18 (#135)\nSupport abandonné pour le contrôleur de js 5 (#135)\ndépendances des bosses",
+				"it": "BREAKING: Supporto a goccia per Node.js 18 (#135)\nBREAKING: Supporto a goccia per js-controller 5 (#135)\nindipendenza urto",
+				"es": "BREAKING: Soporte abandonado para Node.js 18 (#135)\nBREAKING: Soporte desechado para js-controller 5 (#135)\ndependencia de los gastos",
+				"pl": "BREAKING: Upuszczone wsparcie dla Node.js 18 (# 135)\nBREAKING: Upuszczone wsparcie sterownika js- 5 (# 135)\nuzależnienia od guza",
+				"uk": "BREAKING: Dropped підтримка для Node.js 18 (#135)\nBREAKING: Dropped підтримка для js-controller 5 (#135)\nbump залежності",
+				"zh-cn": "BREEAKING:已放弃对Node.js 18(# 135)的支持\n中断 : js 控制器 5 (# 135) 已放弃支持\n意外依赖"
+			}
+		},
+		"titleLang": {
+			"en": "TeslaFi",
+			"de": "TeslaFi",
+			"ru": "TeslaFi",
+			"pt": "TeslaFi",
+			"nl": "TeslaFi",
+			"fr": "TeslaFi",
+			"it": "TeslaFi",
+			"es": "TeslaFi",
+			"pl": "TeslaFi",
+			"uk": "TeslaFi",
+			"zh-cn": "TeslaFi"
+		},
+		"desc": {
+			"en": "Adapter to poll TeslaFi data of your car",
+			"de": "Adapter zum Abrufen von TeslaFi-Daten Ihres Autos",
+			"ru": "Адаптер для опроса данных TeslaFi вашего автомобиля",
+			"pt": "Adaptador para consultar os dados do TeslaFi do seu carro",
+			"nl": "Adapter om TeslaFi-gegevens van uw auto op te halen",
+			"fr": "Adaptateur pour interroger les données TeslaFi de votre voiture",
+			"it": "Adattatore per recuperare i dati TeslaFi della tua auto",
+			"es": "Adaptador para consultar los datos de TeslaFi de su coche",
+			"pl": "Adapter do pobierania danych TeslaFi z Twojego samochodu",
+			"uk": "Адаптер для опитування даних TeslaFi вашого автомобіля",
+			"zh-cn": "适配器，用于轮询您的汽车的 TeslaFi 数据"
+		},
+		"authors": ["Hombach <TeslaFi@homba.ch>"],
+		"keywords": ["TeslaFi", "Tesla", "EV", "Car"],
+		"licenseInformation": {
+			"license": "MIT",
+			"type": "free"
+		},
+		"platform": "Javascript/Node.js",
+		"icon": "teslafi.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/Hombach/ioBroker.teslafi/master/admin/teslafi.png",
+		"readme": "https://github.com/Hombach/ioBroker.teslafi/blob/master/README.md",
+		"loglevel": "info",
+		"tier": 2,
+		"mode": "daemon",
+		"messagebox": true,
+		"type": "vehicle",
+		"compact": true,
+		"connectionType": "cloud",
+		"dataSource": "poll",
+		"adminUI": {
+			"config": "json"
+		},
+		"dependencies": [
+			{
+				"js-controller": ">=6.0.11"
+			}
+		],
+		"globalDependencies": [
+			{
+				"admin": ">=7.6.20"
+			}
+		],
+		"plugins": {
+			"sentry": {
+				"dsn": "https://4635ed7e9381822a788a043a6e94e594@o415875.ingest.us.sentry.io/4508182233284608"
+			}
+		},
+		"supportCustoms": false
+	},
+	"encryptedNative": ["TeslaFiAPIToken", "teslafiapitokenpass"],
+	"protectedNative": ["TeslaFiAPIToken", "teslafiapitokenpass"],
+	"native": {
+		"teslafiapitokenpass": "",
+		"TeslaFiAPIToken": "",
+		"UpdateInterval": "60",
+		"UpdateTimeout": 5000
+	},
+	"objects": [],
+	"instanceObjects": [
+		{
+			"_id": "info",
+			"type": "channel",
+			"common": {
+				"name": "Information"
+			},
+			"native": {}
+		},
+		{
+			"_id": "info.connection",
+			"type": "state",
+			"common": {
+				"role": "indicator.connected",
+				"name": "Device or service connected",
+				"type": "boolean",
+				"read": true,
+				"write": false,
+				"def": false
+			},
+			"native": {}
+		},
+		{
+			"_id": "info.LastSentryLogDay",
+			"type": "state",
+			"common": {
+				"role": "value",
+				"name": "Last day of month for Sentry log",
+				"type": "number",
+				"unit": "",
+				"read": true,
+				"write": false,
+				"def": 0
+			},
+			"native": {}
+		}
+	]
 }

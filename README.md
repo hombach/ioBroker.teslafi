@@ -79,9 +79,10 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
- 
+
 ### 2.0.6 (2026-02-27)
 
+- (hombach) admin 7.6.20 needed by adapter checker
 - (hombach) update axios
 - (hombach) update dependencies
 
