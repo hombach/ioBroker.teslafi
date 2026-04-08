@@ -77,7 +77,9 @@ class TeslaFi extends utils.Adapter {
 				},
 				Math.min(Math.max(this.config.UpdateInterval, 10), 86400) * 1000,
 			);
-			this.intervalList.push(jobVehicleData);
+			if (jobVehicleData != null) {
+				this.intervalList.push(jobVehicleData);
+			}
 		}
 	}
 
