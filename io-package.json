@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "teslafi",
-    "version": "2.0.7",
+    "version": "3.0.0",
     "news": {
+      "3.0.0": {
+        "en": "BREAKING: adapter requires node.js >= 22 now\nupdate dependencies",
+        "de": "BREAKING: Adapter erfordert jetzt node.js >= 22\naktualisierung der abhängigkeiten",
+        "ru": "Адаптер требует node.js >= 22 сейчас\nобновление зависимостей",
+        "pt": "BREAKING: adaptador requer nod.js >= 22 agora\natualizar dependências",
+        "nl": "BREAKING: adapter vereist node.js < 22 nu\nafhankelijkheden bijwerken",
+        "fr": "BREAKING: adaptateur nécessite node.js >= 22 maintenant\nmettre à jour les dépendances",
+        "it": "BREAKING: l'adattatore richiede node.js >= 22 ora\naggiornamento dipendenze",
+        "es": "BREAKING: adaptador requiere node.js >= 22 ahora\ndependencias de actualización",
+        "pl": "BREAKING: adapter wymaga node.js > = 22\naktualizacji zależności",
+        "uk": "BREAKING: адаптер вимагає node.js >= 22 тепер\nоновлення залежності",
+        "zh-cn": "适配器需要节点 Js 22 现在\n更新依赖关系"
+      },
       "2.0.7": {
         "en": "switch to ES2023 code\nfix vulnerability in axios\nupdate dependencies",
         "de": "eS2023-Code wechseln\nschwachstelle in axios beheben\naktualisierung der abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "administrator 7.6.17 polecany przez joBroker (# 166)\nadapter trzpienia - rdzeń do 3.3.2 (# 166)\nnaprawić podatność\nuzależnienia od guza",
         "uk": "admin 7.6.17 Рекомендований ioBroker (#166)\nenglish, українська, français..\nвиправити вразливість\nbump залежності",
         "zh-cn": "ioBroker建议的admin 7.6.17 (# 166)\nburb 适配器核心为 3.3.2 (# 166)\n消除脆弱性\n意外依赖"
-      },
-      "2.0.1": {
-        "en": "add node.js 24 tests (#144)\nbump dependencies",
-        "de": "node.js 24 tests hinzufügen (#144)\nbump-abhängigkeit",
-        "ru": "добавить node.js 24 тестов (#144)\nбамп зависимости",
-        "pt": "add node.js 24 tests (#144)\ndependências de colisão",
-        "nl": "node.js 24 testen toevoegen (#144)\nbump afhankelijkheden",
-        "fr": "ajouter les tests node.js 24 (#144)\ndépendances des bosses",
-        "it": "aggiungere node.js 24 test (#144)\nindipendenza urto",
-        "es": "añadir node.js 24 pruebas (#144)\ndependencia de los gastos",
-        "pl": "dodaj node.js 24 testy (# 144)\nuzależnienia od guza",
-        "uk": "add node.js 24 тести (#144)\nbump залежності",
-        "zh-cn": "添加节点.js 24个测试(# 144)\n意外依赖"
       }
     },
     "titleLang": {
