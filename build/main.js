@@ -33,7 +33,6 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-// The adapter-core module gives you access to the core ioBroker functions you need to create an adapter
 const utils = __importStar(require("@iobroker/adapter-core"));
 const teslafiAPICaller_1 = require("./lib/teslafiAPICaller");
 class TeslaFi extends utils.Adapter {
@@ -46,27 +45,17 @@ class TeslaFi extends utils.Adapter {
         });
         this.on("ready", this.onReady.bind(this));
         this.on("stateChange", this.onStateChange.bind(this));
-        // this.on("objectChange", this.onObjectChange.bind(this));
-        // this.on("message", this.onMessage.bind(this));
         this.on("unload", this.onUnload.bind(this));
         this.intervalList = [];
     }
-    /**
-     * Is called when databases are connected and adapter received configuration.
-     */
     async onReady() {
-        // Reset the connection indicator during startup;
         if (!this.config.TeslaFiAPIToken) {
-            // No Token defined in configuration
             this.log.error(`Missing API Token - please check configuration`);
             void this.setState(`info.connection`, false, true);
         }
         else {
-            // Now read TeslaFi data from API for the first time
-            // WIP const teslaFiAPICaller = new TeslaFiAPICaller(this);
             try {
                 this.teslaFiAPICaller.SetupCommandStates();
-                // set info.connection if data received
                 if (await this.teslaFiAPICaller.ReadTeslaFi()) {
                     void this.setState("info.connection", true, true);
                     this.log.debug(`received data in first poll - good connection`);
@@ -80,7 +69,6 @@ class TeslaFi extends utils.Adapter {
             catch (error) {
                 this.log.error(this.teslaFiAPICaller.generateErrorMessage(error, `pull of data from TeslaFi-Server`));
             }
-            // sentry.io ping
             if (this.supportsFeature && this.supportsFeature("PLUGINS")) {
                 const sentryInstance = this.getPluginInstance("sentry");
                 const today = new Date();
@@ -94,7 +82,7 @@ class TeslaFi extends utils.Adapter {
                                 scope.setTag("SentryDay", today.getDate());
                                 scope.setTag("usedInterval", this.config.UpdateInterval);
                                 scope.setTag("usesCommands", this.config.UseCarCommands ? 1 : 0);
-                                Sentry.captureMessage("Adapter TeslaFi started", "info"); // Level "info"
+                                Sentry.captureMessage("Adapter TeslaFi started", "info");
                             });
                     }
                     void this.setState("info.LastSentryLogDay", {
@@ -103,7 +91,6 @@ class TeslaFi extends utils.Adapter {
                     });
                 }
             }
-            // Init Interval job
             const jobVehicleData = this.setInterval(async () => {
                 this.log.debug(`Interval job VehicleData - Result: ${await this.teslaFiAPICaller.ReadTeslaFi()}`);
             }, Math.min(Math.max(this.config.UpdateInterval, 10), 86400) * 1000);
@@ -112,14 +99,8 @@ class TeslaFi extends utils.Adapter {
             }
         }
     }
-    /**
-     * Is called when adapter shuts down - callback has to be called under any circumstances!
-     *
-     * @param callback - callback
-     */
     onUnload(callback) {
         try {
-            // Here you must clear all timeouts or intervals that may still be active
             for (const intervalJob of this.intervalList) {
                 this.clearInterval(intervalJob);
             }
@@ -131,17 +112,9 @@ class TeslaFi extends utils.Adapter {
             callback();
         }
     }
-    /**
-     * Is called if a subscribed state changes
-     *
-     * @param id - state ID
-     * @param state - ioBroker state object
-     */
     async onStateChange(id, state) {
         try {
             if (state) {
-                // The state was changed
-                // this.adapter.subscribeStates(`commands.*`);
                 if (!state.ack) {
                     if (id.includes(`.commands.`)) {
                         const statePath = id.split(".");
@@ -186,7 +159,6 @@ class TeslaFi extends utils.Adapter {
                 }
             }
             else {
-                // The state was deleted
                 this.log.warn(`state ${id} deleted`);
             }
         }
@@ -196,11 +168,9 @@ class TeslaFi extends utils.Adapter {
     }
 }
 if (require.main !== module) {
-    // Export the constructor in compact mode
     module.exports = (options) => new TeslaFi(options);
 }
 else {
-    // otherwise start the instance directly
     (() => new TeslaFi())();
 }
 //# sourceMappingURL=main.js.map

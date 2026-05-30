@@ -40,7 +40,7 @@ export class ProjectUtils {
 	private async getState(stateName: string): Promise<ioBroker.State | null | undefined> {
 		try {
 			if (await this.verifyStateAvailable(stateName)) {
-				// Get state value, so like: {val: false, ack: true, ts: 1591117034451, �}
+				// Get state value, so like: {val: false, ack: true, ts: 1591117034451, }
 				const stateValueObject = await this.adapter.getStateAsync(stateName);
 				if (!this.isLikeEmpty(stateValueObject)) {
 					return stateValueObject;
@@ -124,14 +124,7 @@ export class ProjectUtils {
 	 */
 	private isLikeEmpty(inputVar: ioBroker.State | null | undefined): boolean {
 		if (typeof inputVar !== "undefined" && inputVar !== null) {
-			let sTemp = JSON.stringify(inputVar);
-			sTemp = sTemp.replace(/\s+/g, ""); // remove all white spaces
-			sTemp = sTemp.replace(/"+/g, ""); // remove all >"<
-			sTemp = sTemp.replace(/'+/g, ""); // remove all >'<
-			sTemp = sTemp.replace(/\[+/g, ""); // remove all >[<
-			sTemp = sTemp.replace(/\]+/g, ""); // remove all >]<
-			sTemp = sTemp.replace(/\{+/g, ""); // remove all >{<
-			sTemp = sTemp.replace(/\}+/g, ""); // remove all >}<
+			const sTemp = JSON.stringify(inputVar).replace(/[\s"'[\]{}]/g, "");
 			if (sTemp !== "") {
 				return false;
 			}
@@ -224,6 +217,10 @@ export class ProjectUtils {
 				...((max ?? undefined) ? { max } : {}),
 				...((step ?? undefined) ? { step } : {}),
 			};
+			// Add unit only if it's provided
+			if (unit != null) {
+				commonObj.unit = unit;
+			}
 
 			await (forceMode
 				? this.adapter.setObject(stateName, { type: "state", common: commonObj, native: {} })
@@ -274,6 +271,103 @@ export class ProjectUtils {
 				await this.adapter.setState(stateName, { val: value, ack: true });
 			}
 		}
+	}
+
+	/**
+	 * Checks if a folder object exists, creates it if necessary.
+	 *
+	 * @param folderObjectName - Object ID of the folder (e.g. Charger)
+	 * @param name - Display name of the folder
+	 * @param icon - Optional icon name/path (e.g. `go-eCharger.png`)
+	 * @param forceMode - overwrite existing object
+	 * @returns Promise<void>
+	 */
+	async checkAndSetFolder(folderObjectName: string, name?: string, icon = "", forceMode = false): Promise<void> {
+		const commonObj: ioBroker.MetaCommon = {
+			type: "meta.folder",
+			name: name ?? folderObjectName.split(".").pop() ?? folderObjectName,
+			desc: "",
+		};
+		if (icon) {
+			commonObj.icon = icon;
+		}
+		await (forceMode
+			? this.adapter.setObject(folderObjectName, {
+					type: "folder",
+					common: commonObj,
+					native: {},
+				})
+			: this.adapter.setObjectNotExistsAsync(folderObjectName, {
+					type: "folder",
+					common: commonObj,
+					native: {},
+				}));
+	}
+
+	/**
+	 * Checks if a device object exists, creates it if necessary.
+	 *
+	 * @param deviceObjectName - Object ID of the device (e.g. Charger.0)
+	 * @param name - Display name of the device (default: derived from ID)
+	 * @param onlineId - Optional state ID for online status binding (e.g. `info.connection`)
+	 * @param icon - Optional icon name/path (e.g. `go-eCharger.png`)
+	 * @param forceMode - Optional boolean indicating if the device should be overwritten if it already exists (default is false).
+	 * @returns Promise<void>
+	 */
+	async checkAndSetDevice(deviceObjectName: string, name?: string, onlineId = "", icon = "", forceMode = false): Promise<void> {
+		const commonObj: ioBroker.DeviceCommon = {
+			name: name ?? deviceObjectName.split(".").pop() ?? deviceObjectName,
+			desc: "",
+		};
+		if (onlineId) {
+			commonObj.statusStates = {
+				onlineId,
+			};
+		}
+		if (icon) {
+			commonObj.icon = icon;
+		}
+		await (forceMode
+			? this.adapter.setObject(deviceObjectName, {
+					type: "device",
+					common: commonObj,
+					native: {},
+				})
+			: this.adapter.setObjectNotExistsAsync(deviceObjectName, {
+					type: "device",
+					common: commonObj,
+					native: {},
+				}));
+	}
+
+	/**
+	 * Checks if a channel object exists, creates it if necessary.
+	 *
+	 * @param channelObjectName - Object ID of the channel (e.g. Charger.0.Info)
+	 * @param name - Display name of the channel (default: derived from ID)
+	 * @param icon - Optional icon name/path (e.g. `go-eCharger.png`)
+	 * @param forceMode - Optional boolean indicating if the device should be overwritten if it already exists (default is false).
+	 * @returns Promise<void>
+	 */
+	async checkAndSetChannel(channelObjectName: string, name?: string, icon = "", forceMode = false): Promise<void> {
+		const commonObj: ioBroker.ChannelCommon = {
+			name: name ?? channelObjectName.split(".").pop() ?? channelObjectName,
+			desc: "",
+		};
+		if (icon) {
+			commonObj.icon = icon;
+		}
+		await (forceMode
+			? this.adapter.setObject(channelObjectName, {
+					type: "channel",
+					common: commonObj,
+					native: {},
+				})
+			: this.adapter.setObjectNotExistsAsync(channelObjectName, {
+					type: "channel",
+					common: commonObj,
+					native: {},
+				}));
 	}
 
 	/**
