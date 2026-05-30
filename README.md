@@ -66,7 +66,7 @@ The TeslaFi adapter is actively maintained, and additional features or data cate
 
 ## Sentry
 
-This adapter employs Sentry libraries to automatically report exceptions and code errors to the developers. For more details and information on how to disable error reporting, please consult the [Sentry-Plugin Documentation](https://github.com/ioBroker/plugin-sentry#plugin-sentry)! Sentry reporting is initiated starting with js-controller 3.0.
+This adapter uses Sentry libraries to automatically report exceptions and code errors to the developers. For more details and for information on how to disable error reporting, see [Sentry-Plugin Documentation](https://github.com/ioBroker/plugin-sentry#plugin-sentry)! Sentry reporting is used starting with js-controller 3.0.
 
 ## Donate
 
