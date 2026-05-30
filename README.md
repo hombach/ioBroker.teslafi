@@ -26,7 +26,7 @@
 
 [![NPM](https://nodei.co/npm/iobroker.teslafi.png?downloads=true)](https://nodei.co/npm/iobroker.teslafi/)
 
-# ioBroker TeslaFi Adapter – Seamless Tesla Data Integration for Your Smart Home
+## ioBroker TeslaFi Adapter – Seamless Tesla Data Integration for Your Smart Home
 
 The TeslaFi adapter enables effortless integration of vehicle data from your TeslaFi account into the ioBroker system. Leverage this data to enhance your Tesla experience and optimize home automation workflows.
 
@@ -79,6 +79,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
 ### 3.0.0 (2026-05-05)
 
 - (copilot) BREAKING: adapter requires node.js >= 22 now
