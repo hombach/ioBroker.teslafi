@@ -80,6 +80,11 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
   ### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS**
+
+- (hombach) fix warnings by adapter checker
+- (hombach) update dependencies
+
 ### 3.0.0 (2026-05-05)
 
 - (copilot) BREAKING: adapter requires node.js >= 22 now
