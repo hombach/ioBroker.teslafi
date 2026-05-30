@@ -12,164 +12,164 @@ const axiosInstance = axios_1.default.create({
 });
 // structure of vehicle data
 const stVD = {
-    Date: { key: `Date`, desc: `Last connection to your Tesla`, value: null },
+    Date: { key: `Date`, desc: `Last connection to your Tesla`, value: "" },
     // calendar_enabled: null, remote_start_enabled: "1"
     display_name: {
         key: `display_name`,
         desc: `Name of your Tesla`,
-        value: null,
+        value: "",
     },
     // color: "1 FanOnly ", fast_charger_brand: "", notifications_enabled: null
-    vin: { key: `vin`, desc: `VIN of your Tesla`, value: null },
+    vin: { key: `vin`, desc: `VIN of your Tesla`, value: "" },
     // conn_charge_cable: "IEC", id: "NULL", charge_port_cold_weather_mode: "0", id_s: ""
-    state: { key: `state`, desc: `State of your Tesla`, value: null },
+    state: { key: `state`, desc: `State of your Tesla`, value: "" },
     // option_codes: null, user_charge_enable_request: null
     time_to_full_charge: {
         key: `time_to_full_charge`,
         desc: `Time to full charge`,
-        value: null,
+        value: "",
     },
     charge_current_request: {
         key: `charge_current_request`,
         desc: `requested charge current by your car`,
-        value: null,
+        value: "",
     },
     // charge_enable_request: "1", charge_to_max_range: ""
     charger_phases: {
         key: `charger_phases`,
         desc: `current number of charge phases`,
-        value: null,
+        value: "",
     },
     // battery_heater_on: "0"
     // managed_charging_start_time: { key: `managed_charging_start_time`, desc: `planned managed charging time`, value: null },
     battery_range: {
         key: `battery_range`,
         desc: `current battery range`,
-        value: null,
+        value: "",
     },
     charger_power: {
         key: `charger_power`,
         desc: `current charge power`,
-        value: null,
+        value: "",
     },
     charge_limit_soc: {
         key: `charge_limit_soc`,
         desc: `charge limit defined in your Tesla`,
-        value: null,
+        value: "",
     },
     // charger_pilot_current: "16", charge_port_latch: "Engaged", battery_current: "", charger_actual_current: "0", scheduled_charging_pending: "0", fast_charger_type: ""
     usable_battery_level: {
         key: `usable_battery_level`,
         desc: `usable battery SoC at this temperature conditions`,
-        value: null,
+        value: "",
     },
     // motorized_charge_port: null, charge_limit_soc_std: null, not_enough_power_to_heat: null
     battery_level: {
         key: `battery_level`,
         desc: `battery SoC of your Tesla`,
-        value: null,
+        value: "",
     },
     // charge_energy_added: "0.0", charge_port_door_open: "1", max_range_charge_counter: null, charge_limit_soc_max: null, ideal_battery_range: "237.17"
     // managed_charging_active: { key: `managed_charging_active`, desc: `managed charging planned`, value: null },
     charging_state: {
         key: `charging_state`,
         desc: `charging state of the car`,
-        value: null,
+        value: "",
     },
     // fast_charger_present: "0", trip_charging: "1", managed_charging_user_canceled: null
     scheduled_charging_start_time: {
         key: `scheduled_charging_start_time`,
         desc: `scheduled charging start time`,
-        value: null,
+        value: "",
     },
     est_battery_range: {
         key: `est_battery_range`,
         desc: `estimated battery range`,
-        value: null,
+        value: "",
     },
     // charge_rate: "0.0", charger_voltage: "1", charge_current_request_max: "16", eu_vehicle: "1", charge_miles_added_ideal: "0.0", charge_limit_soc_min: null, charge_miles_added_rated: "0.0"
     inside_temp: {
         key: `inside_temp`,
         desc: `inside temperature in your Tesla`,
-        value: null,
+        value: "",
     },
     longitude: {
         key: `longitude`,
         desc: `current positional longitude of your Tesla`,
-        value: null,
+        value: "",
     },
     // heading: "", gps_as_of: null
     latitude: {
         key: `latitude`,
         desc: `current positional latitude of your Tesla`,
-        value: null,
+        value: "",
     },
-    speed: { key: `speed`, desc: `current driving speed`, value: null },
+    speed: { key: `speed`, desc: `current driving speed`, value: "" },
     // shift_state: null
     seat_heater_rear_right: {
         key: `seat_heater_rear_right`,
         desc: `level of the right second row seat heater`,
-        value: null,
+        value: "",
     },
     seat_heater_rear_left_back: {
         key: `seat_heater_rear_left_back`,
         desc: `level of the left third row seat heater`,
-        value: null,
+        value: "",
     },
     seat_heater_left: {
         key: `seat_heater_left`,
         desc: `level of the left first row seat heater`,
-        value: null,
+        value: "",
     },
     // passenger_temp_setting: "20.5", is_auto_conditioning_on: "0"
     driver_temp_setting: {
         key: `driver_temp_setting`,
         desc: `inside temperature setting of your Tesla`,
-        value: null,
+        value: "",
     },
     outside_temp: {
         key: `outside_temp`,
         desc: `outside temperature near your Tesla`,
-        value: null,
+        value: "",
     },
     seat_heater_rear_center: {
         key: `seat_heater_rear_center`,
         desc: `level of the second row center seat heater`,
-        value: null,
+        value: "",
     },
     // is_rear_defroster_on: "0"
     seat_heater_rear_right_back: {
         key: `seat_heater_rear_right_back`,
         desc: `level of the right third row seat heater`,
-        value: null,
+        value: "",
     },
     // smart_preconditioning: ""
     seat_heater_right: {
         key: `seat_heater_right`,
         desc: `level of the right seat heater`,
-        value: null,
+        value: "",
     },
     // fan_status: "0", is_front_defroster_on: "0"
     seat_heater_rear_left: {
         key: `seat_heater_rear_left`,
         desc: `level of the left second row seat heater`,
-        value: null,
+        value: "",
     },
     // gui_charge_rate_units: null, gui_24_hour_time: null, gui_temperature_units: null, gui_range_display: null, gui_distance_units: null, sun_roof_installed: null,
     // rhd: "0", remote_start_supported: null, homelink_nearby: "0", parsed_calendar_supported: null, spoiler_type: null, ft: "0"
-    odometer: { key: `odometer`, desc: `current odometer level`, value: null },
+    odometer: { key: `odometer`, desc: `current odometer level`, value: "" },
     // remote_start: null, pr: "0", climate_keeper_mode: "off", roof_color: null, perf_config: null, valet_mode: "0", calendar_supported: null, pf: "0", sun_roof_percent_open: null,
     third_row_seats: {
         key: `third_row_seats`,
         desc: `third seating row present`,
-        value: null,
+        value: "",
     },
     // seat_type: null, api_version: null, rear_seat_heaters: null, rt: "0", exterior_color: null, df: "0", autopark_state: "NULL", sun_roof_state: null, notifications_supported: null, vehicle_name: null,
     // dr: "0", autopark_style: null, car_type: null, wheel_type: "Apollo19MetallicShad", locked: "1", center_display_state: null, last_autopark_error: null
     car_version: {
         key: `car_version`,
         desc: `Current software version`,
-        value: null,
+        value: "",
     },
     // defrost_mode: "0", autopark_state_v2: null, is_preconditioning: "0", inside_tempF: "60", driver_temp_settingF: "", outside_tempF: "57", battery_heater: "0", Notes: "", odometerF: "", idleNumber: 14780,
     // sleepNumber: 0, driveNumber: 0, chargeNumber: 0, polling: "", idleTime: 1, maxRange: "314.14", left_temp_direction: null, max_avail_temp: null, is_climate_on: "0", right_temp_direction: null,
@@ -177,16 +177,16 @@ const stVD = {
     steering_wheel_heater: {
         key: `steering_wheel_heater`,
         desc: `level of the steering wheel heater`,
-        value: null,
+        value: "",
     },
     // elevation: "", sentry_mode: "0", fd_window: "0", fp_window: "0", rd_window: "0", rp_window: "0", measure: "metric", temperature: "C", currency: "â‚¬"
-    carState: { key: `carState`, desc: `Sleep-state of your Tesla`, value: null },
-    location: { key: `location`, desc: `Location of your Tesla`, value: null },
+    carState: { key: `carState`, desc: `Sleep-state of your Tesla`, value: "" },
+    location: { key: `location`, desc: `Location of your Tesla`, value: "" },
     // rangeDisplay: "rated",
     newVersion: {
         key: `newVersion`,
         desc: `Next software version if available`,
-        value: null, //" "
+        value: "", //" "
     },
     newVersionStatus: { key: `newVersionStatus`, desc: ``, value: `` }, //"installing", ""
     // allow_cabin_overheat_protection: "1", cabin_overheat_protection: "FanOnly", cabin_overheat_protection_actively_cooling: "", cop_activation_temperature: null, pressure: null,
@@ -318,27 +318,27 @@ class TeslaFiAPICaller extends projectUtils_1.ProjectUtils {
                 void this.adapter.setState(`commands.${stVCom.auto_conditioning_stop.key}`, false, true);
                 break;
             case stVCom.set_HVAC_temp.key:
-                clampedValue = Math.min(28, Math.max(15, value));
+                clampedValue = Math.min(28, Math.max(15, Number(value)));
                 await this.ReadTeslaFi(`${stVCom.set_HVAC_temp.command}=${clampedValue ?? 20}`);
                 break;
             case stVCom.set_seat_heat_left.key:
-                clampedValue = Math.min(3, Math.max(0, Math.round(value)));
+                clampedValue = Math.min(3, Math.max(0, Math.round(Number(value))));
                 await this.ReadTeslaFi(`${stVCom.set_seat_heat_left.command}=${clampedValue ?? 0}`);
                 break;
             case stVCom.set_seat_heat_right.key:
-                clampedValue = Math.min(3, Math.max(0, Math.round(value)));
+                clampedValue = Math.min(3, Math.max(0, Math.round(Number(value))));
                 await this.ReadTeslaFi(`${stVCom.set_seat_heat_right.command}=${clampedValue ?? 0}`);
                 break;
             case stVCom.set_seat_heat_rear_left.key:
-                clampedValue = Math.min(3, Math.max(0, Math.round(value)));
+                clampedValue = Math.min(3, Math.max(0, Math.round(Number(value))));
                 await this.ReadTeslaFi(`${stVCom.set_seat_heat_rear_left.command}=${clampedValue ?? 0}`);
                 break;
             case stVCom.set_seat_heat_rear_center.key:
-                clampedValue = Math.min(3, Math.max(0, Math.round(value)));
+                clampedValue = Math.min(3, Math.max(0, Math.round(Number(value))));
                 await this.ReadTeslaFi(`${stVCom.set_seat_heat_rear_center.command}=${clampedValue ?? 0}`);
                 break;
             case stVCom.set_seat_heat_rear_right.key:
-                clampedValue = Math.min(3, Math.max(0, Math.round(value)));
+                clampedValue = Math.min(3, Math.max(0, Math.round(Number(value))));
                 await this.ReadTeslaFi(`${stVCom.set_seat_heat_rear_right.command}=${clampedValue ?? 0}`);
                 break;
             case stVCom.start_charging.key:
@@ -348,11 +348,11 @@ class TeslaFiAPICaller extends projectUtils_1.ProjectUtils {
                 await this.ReadTeslaFi(stVCom.stop_charging.command);
                 break;
             case stVCom.set_charge_limit.key:
-                clampedValue = Math.min(100, Math.max(50, Math.round(value)));
+                clampedValue = Math.min(100, Math.max(50, Math.round(Number(value))));
                 await this.ReadTeslaFi(`${stVCom.set_charge_limit.command}=${clampedValue ?? 80}`);
                 break;
             case stVCom.set_charge_amps.key:
-                clampedValue = Math.min(32, Math.max(5, Math.round(value)));
+                clampedValue = Math.min(32, Math.max(5, Math.round(Number(value))));
                 await this.ReadTeslaFi(`${stVCom.set_charge_amps.command}=${clampedValue ?? 10}`);
                 break;
             default:
