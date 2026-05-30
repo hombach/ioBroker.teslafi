@@ -82,8 +82,9 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 
 ### **WORK IN PROGRESS**
 
-- (hombach) fix warnings by adapter checker
-- (hombach) update dependencies
+- (hombach) upgraded TypeScript to 6.x
+- (hombach) fixed warnings by adapter checker
+- (hombach) updated dependencies
 
 ### 3.0.0 (2026-05-05)
 
