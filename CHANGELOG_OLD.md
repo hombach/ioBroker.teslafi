@@ -16,6 +16,11 @@ The TeslaFi adapter enables effortless integration of vehicle data from your Tes
 
 ## Changelog - OLD CHANGES
 
+## 2.0.4 (2025-10-22)
+
+- (hombach) upgrade NPM deployment system
+- (hombach) bump dependencies
+
 ## 2.0.3 (2025-09-27)
 
 - (hombach) remove allowInit (#181)

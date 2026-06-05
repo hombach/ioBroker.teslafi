@@ -79,8 +79,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 3.0.1 (2026-06-05)
 
 - (hombach) upgraded TypeScript to 6.x
 - (hombach) fixed warnings by adapter checker
@@ -109,11 +108,6 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 - (hombach) year 2026 changes
 - (hombach) update axios
 - (hombach) update dependencies
-
-### 2.0.4 (2025-10-22)
-
-- (hombach) upgrade NPM deployment system
-- (hombach) bump dependencies
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 

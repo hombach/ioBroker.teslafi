@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "teslafi",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "news": {
+      "3.0.1": {
+        "en": "upgraded TypeScript to 6.x\nfixed warnings by adapter checker\nupdated dependencies",
+        "de": "erweitertes TypeScript auf 6.x\nfeste warnungen durch adapter-checker\naktualisierte abhängigkeiten",
+        "ru": "обновление TypeScript до 6.x\nфиксированные предупреждения от adapter checker\nобновленные зависимости",
+        "pt": "atualizado TypeScript para 6.x\navisos fixos pelo verificador adaptador\ndependências atualizadas",
+        "nl": "opgewaardeerd TypeScript naar 6.x\nvaste waarschuwingen door adaptercontrole\nbijgewerkte afhankelijkheden",
+        "fr": "mis à jour TypeScript vers 6.x\navertissements fixes par adaptateur-vérificateur\ndépendances actualisées",
+        "it": "aggiornato TypeScript a 6.x\navvertenze fisse per adattatore checker\ndipendenze aggiornate",
+        "es": "actualizado TipoScript a 6.x\nadvertencias fijas por adaptador\ndependencias actualizadas",
+        "pl": "uaktualniony TypeScript do 6.x\nstałe ostrzeżenia przez sprawdzacz adaptera\nzaktualizowane zależności",
+        "uk": "оновлений TypeScript до 6.x\nвиправлені попередження за допомогою адаптера\nоновлені залежності",
+        "zh-cn": "升级类型脚本到 6.x\n通过适配器检查器的固定警告\n更新的依赖关系"
+      },
       "3.0.0": {
         "en": "BREAKING: adapter requires node.js >= 22 now\nupdate dependencies",
         "de": "BREAKING: Adapter erfordert jetzt node.js >= 22\naktualisierung der abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "usunąć allowInit (# 181)\nfix schema URL dla jsonConfig (# 181)\naktualizacja systemu chai\nuzależnienia od guza",
         "uk": "прибрати припускПримітка (#181)\nfix schema URL для jsonConfig (#181)\nоновлення системи chai\nbump залежності",
         "zh-cn": "删除允许的Init(# 181)\njsonConfig (# 181) 的固定方案 URL\n更新 chai 系统\n意外依赖"
-      },
-      "2.0.2": {
-        "en": "admin 7.6.17 recommended by ioBroker (#166)\nbumb adapter-core to 3.3.2 (#166)\nfix vulnerability\nbump dependencies",
-        "de": "admin 7.6.17 empfohlen von ioBroker (#166)\nbumb adapter-kern auf 3.3.2 (#166)\nfehlerbehebung\nbumpabhängigkeiten",
-        "ru": "admin 7.6.17, рекомендованный ioBroker (#166)\nbumb adapter-core для 3.3.2 (#166)\nисправить уязвимость\nбамп зависимости",
-        "pt": "admin 7.6.17 recomendado por ioBroker (# 166)\nbumb adaptador-core para 3.3.2 (# 166)\ncorrigir vulnerabilidade\ndependências de colisão",
-        "nl": "aanbevolen door ioBroker (#166)\nbumb adapter-core to 3.3.2 (#166)\nkwetsbaarheid herstellen\nbump afhankelijkheden",
-        "fr": "admin 7.6.17 recommandé par ioBroker (#166)\nadaptateur-noyau à 3.3.2 (#166)\nfixer la vulnérabilité\ndépendances des bosses",
-        "it": "admin 7.6.17 consigliato da ioBroker (#166)\nbumb adapter-core a 3.3.2 (#166)\ncorrezione della vulnerabilità\nindipendenza urto",
-        "es": "admin 7.6.17 recomendado por ioBroker (#166)\nomb adaptador-core a 3.3.2 (#166)\ncorrección de vulnerabilidad\ndependencia de los gastos",
-        "pl": "administrator 7.6.17 polecany przez joBroker (# 166)\nadapter trzpienia - rdzeń do 3.3.2 (# 166)\nnaprawić podatność\nuzależnienia od guza",
-        "uk": "admin 7.6.17 Рекомендований ioBroker (#166)\nenglish, українська, français..\nвиправити вразливість\nbump залежності",
-        "zh-cn": "ioBroker建议的admin 7.6.17 (# 166)\nburb 适配器核心为 3.3.2 (# 166)\n消除脆弱性\n意外依赖"
       }
     },
     "titleLang": {
