@@ -66,7 +66,7 @@ The TeslaFi adapter is actively maintained, and additional features or data cate
 
 ## Sentry
 
-This adapter uses Sentry libraries to automatically report exceptions and code errors to the developers. For more details and for information on how to disable error reporting, see [Sentry-Plugin Documentation](https://github.com/ioBroker/plugin-sentry#plugin-sentry)! Sentry reporting is used starting with js-controller 3.0.
+**This adapter uses Sentry libraries to automatically report exceptions and code errors to the developers.** For more details and for information on how to disable error reporting, see <a href="https://github.com/ioBroker/plugin-sentry#plugin-sentry">Sentry-Plugin Documentation</a>!
 
 ## Donate
 
@@ -79,6 +79,11 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- (hombach) fixed warnings by adapter checker
+
 ### 3.0.1 (2026-06-05)
 
 - (hombach) upgraded TypeScript to 6.x
