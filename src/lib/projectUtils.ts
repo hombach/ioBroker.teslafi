@@ -145,7 +145,7 @@ export class ProjectUtils {
 	 * @param forceMode - Optional boolean indicating if the state should be reinitiated if it already exists (default is false).
 	 * @returns A Promise that resolves when the state is checked, created (if necessary), and updated.
 	 */
-	protected async checkAndSetValue(
+	async checkAndSetValue(
 		stateName: string,
 		value: string,
 		description = "-",
@@ -189,7 +189,7 @@ export class ProjectUtils {
 	 * @param step - Optional number setting value step
 	 * @returns A Promise that resolves when the state is checked, created (if necessary), and updated.
 	 */
-	protected async checkAndSetValueNumber(
+	async checkAndSetValueNumber(
 		stateName: string,
 		value: number,
 		description = "-",
@@ -210,17 +210,11 @@ export class ProjectUtils {
 				desc: description,
 				read: true,
 				write: writeable,
-				// Add unit only if it's provided and not null or undefined
-				...((unit ?? undefined) ? { unit } : {}),
-				// Add minimum, maximum and step for value only if it's provided and not null or undefined
-				...((min ?? undefined) ? { min } : {}),
-				...((max ?? undefined) ? { max } : {}),
-				...((step ?? undefined) ? { step } : {}),
+				...(unit != null ? { unit } : {}),
+				...(min != null ? { min } : {}),
+				...(max != null ? { max } : {}),
+				...(step != null ? { step } : {}),
 			};
-			// Add unit only if it's provided
-			if (unit != null) {
-				commonObj.unit = unit;
-			}
 
 			await (forceMode
 				? this.adapter.setObject(stateName, { type: "state", common: commonObj, native: {} })
@@ -244,7 +238,7 @@ export class ProjectUtils {
 	 * @param forceMode - Optional boolean indicating if the state should be overwritten if it already exists (default is false).
 	 * @returns A Promise that resolves when the state is checked, created (if necessary), and updated.
 	 */
-	protected async checkAndSetValueBoolean(
+	async checkAndSetValueBoolean(
 		stateName: string,
 		value: boolean,
 		description = "-",
