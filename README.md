@@ -26,6 +26,10 @@
 
 [![NPM](https://nodei.co/npm/iobroker.teslafi.png?downloads=true)](https://nodei.co/npm/iobroker.teslafi/)
 
+## Sentry
+
+**This adapter uses Sentry libraries to automatically report exceptions and code errors to the developers.** For more details and for information on how to disable error reporting, see <a href="https://github.com/ioBroker/plugin-sentry#plugin-sentry">Sentry-Plugin Documentation</a>!
+
 ## ioBroker TeslaFi Adapter – Seamless Tesla Data Integration for Your Smart Home
 
 The TeslaFi adapter enables effortless integration of vehicle data from your TeslaFi account into the ioBroker system. Leverage this data to enhance your Tesla experience and optimize home automation workflows.
@@ -63,10 +67,6 @@ The adapter is compatible with all Tesla models supported by TeslaFi. A valid Te
 ## Active Development and User Contributions
 
 The TeslaFi adapter is actively maintained, and additional features or data categories can be added based on user requests. Feel free to submit your ideas and help improve the adapter for the entire community!
-
-## Sentry
-
-**This adapter uses Sentry libraries to automatically report exceptions and code errors to the developers.** For more details and for information on how to disable error reporting, see <a href="https://github.com/ioBroker/plugin-sentry#plugin-sentry">Sentry-Plugin Documentation</a>!
 
 ## Donate
 
