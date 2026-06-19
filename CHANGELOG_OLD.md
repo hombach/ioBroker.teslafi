@@ -16,29 +16,31 @@ The TeslaFi adapter enables effortless integration of vehicle data from your Tes
 
 ## Changelog - OLD CHANGES
 
+## 2.0.5 (2026-01-01)
+
+- (hombach) optimize dependabot config (#209)
+- (hombach) year 2026 changes
+- (hombach) update axios
+
 ## 2.0.4 (2025-10-22)
 
 - (hombach) upgrade NPM deployment system
-- (hombach) bump dependencies
 
 ## 2.0.3 (2025-09-27)
 
 - (hombach) remove allowInit (#181)
 - (hombach) fix schema URL for jsonConfig (#181)
 - (hombach) update chai system
-- (hombach) bump dependencies
 
 ## 2.0.2 (2025-08-24)
 
 - (hombach) admin 7.6.17 recommended by ioBroker (#166)
 - (hombach) bumb adapter-core to 3.3.2 (#166)
 - (hombach) fix vulnerability
-- (hombach) bump dependencies
 
 ## 2.0.1 (2025-06-08)
 
 - (hombach) add node.js 24 tests (#144)
-- (hombach) bump dependencies
 
 ## 2.0.0 (2025-05-04)
 

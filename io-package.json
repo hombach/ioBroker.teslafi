@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "teslafi",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "news": {
+      "3.0.2": {
+        "en": "fixed warnings by adapter checker",
+        "de": "Warnungen des Adapterprüfers behoben",
+        "ru": "Исправлены предупреждения, выявленные программой проверки адаптеров.",
+        "pt": "avisos corrigidos pelo verificador de adaptadores",
+        "nl": "Waarschuwingen opgelost door adaptercontrole",
+        "fr": "Avertissements corrigés par le vérificateur d'adaptateur",
+        "it": "Avvisi corretti dal controllore dell'adattatore",
+        "es": "Se corrigieron las advertencias del verificador del adaptador.",
+        "pl": "naprawiono ostrzeżenia przez kontroler adaptera",
+        "uk": "виправлені попередження за допомогою перевірки адаптерів",
+        "zh-cn": "适配器检查器修复了警告"
+      },
       "3.0.1": {
         "en": "upgraded TypeScript to 6.x\nfixed warnings by adapter checker\nupdated dependencies",
         "de": "erweitertes TypeScript auf 6.x\nfeste warnungen durch adapter-checker\naktualisierte abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "aktualizacja systemu wdrażania NPM\nuzależnienia od guza",
         "uk": "оновлення системи розгортання NPM\nbump залежності",
         "zh-cn": "改进国家预防机制的部署系统\n意外依赖"
-      },
-      "2.0.3": {
-        "en": "remove allowInit (#181)\nfix schema URL for jsonConfig (#181)\nupdate chai system\nbump dependencies",
-        "de": "entfernen zulassenInit (#181)\nschema URL für jsonConfig (#181)\nchai system\nbumpabhängigkeiten",
-        "ru": "удалить LetInit (#181)\nисправить URL схемы для jsonConfig (#181)\nобновление системы chai\nбамп зависимости",
-        "pt": "remover allowInit (# 181)\ncorrigir o URL do esquema para o jsonConfig (# 181)\natualizar sistema chai\ndependências de colisão",
-        "nl": "verwijderen allowInit (#181)\nfix schema URL voor jsonConfig (#181)\nchai-systeem bijwerken\nbump afhankelijkheden",
-        "fr": "supprimer allowInit (#181)\ncorriger l'URL du schéma pour jsonConfig (#181)\nmettre à jour le système chai\ndépendances des bosses",
-        "it": "rimuovere consentInit (#181)\nfix schema URL per jsonConfig (#181)\naggiornamento sistema chai\nindipendenza urto",
-        "es": "remove allowInit (#181)\nschema URL para jsonConfig (#181)\nactualización del sistema chai\ndependencia de los gastos",
-        "pl": "usunąć allowInit (# 181)\nfix schema URL dla jsonConfig (# 181)\naktualizacja systemu chai\nuzależnienia od guza",
-        "uk": "прибрати припускПримітка (#181)\nfix schema URL для jsonConfig (#181)\nоновлення системи chai\nbump залежності",
-        "zh-cn": "删除允许的Init(# 181)\njsonConfig (# 181) 的固定方案 URL\n更新 chai 系统\n意外依赖"
       }
     },
     "titleLang": {

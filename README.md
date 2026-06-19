@@ -79,8 +79,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 3.0.2 (2026-06-19)
 
 - (hombach) fixed warnings by adapter checker
 
@@ -104,13 +103,6 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 ### 2.0.6 (2026-02-27)
 
 - (hombach) admin 7.6.20 needed by adapter checker
-- (hombach) update axios
-- (hombach) update dependencies
-
-### 2.0.5 (2026-01-01)
-
-- (hombach) optimize dependabot config (#209)
-- (hombach) year 2026 changes
 - (hombach) update axios
 - (hombach) update dependencies
 
