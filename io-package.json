@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "teslafi",
-    "version": "3.0.2",
+    "version": "3.0.3",
     "news": {
+      "3.0.3": {
+        "en": "removed unneeded test devDependencies (chai, sinon-chai, proxyquire) and switched tests to Node.js assert\nupdated axios",
+        "de": "Nicht benötigte Testabhängigkeiten (chai, sinon-chai, proxyquire) wurden entfernt und die Tests auf Node.js-Assertions umgestellt.\naktualisiertes Axios",
+        "ru": "Удалил ненужные зависимости для разработки тестов (chai, sinon-chai, proxyquire) и переключил тесты на проверку Node.js.\nобновленные аксиосы",
+        "pt": "Removi as dependências de desenvolvimento de teste desnecessárias (chai, sinon-chai, proxyquire) e migrei os testes para assert do Node.js.\naxios atualizado",
+        "nl": "Onnodige test-devDependencies (chai, sinon-chai, proxyquire) verwijderd en tests overgezet naar Node.js-assert\naxios bijgewerkt",
+        "fr": "Suppression des dépendances de développement de test inutiles (chai, sinon-chai, proxyquire) et passage à des tests utilisant Node.js.\naxios mis à jour",
+        "it": "Rimossi i test devDependencies non necessari (chai, sinon-chai, proxyquire) e convertiti i test in Node.js assert\naxios aggiornato",
+        "es": "Se eliminaron las dependencias de desarrollo de prueba innecesarias (chai, sinon-chai, proxyquire) y se cambiaron las pruebas a la aserción de Node.js.\nAxios actualizado",
+        "pl": "usunięto niepotrzebne zależności testowe (chai, sinon-chai, proxyquire) i przełączono testy na Node.js assert\nzaktualizowane aksjomaty",
+        "uk": "видалено непотрібні devDependencies для тестів (chai, sinon-chai, proxyquire) та переключено тести на Node.js assert\nоновлений Axios",
+        "zh-cn": "移除了不必要的测试开发依赖项（chai、sinon-chai、proxyquire），并将测试切换为 Node.js assert。\n更新后的 axios"
+      },
       "3.0.2": {
         "en": "fixed warnings by adapter checker",
         "de": "Warnungen des Adapterprüfers behoben",
@@ -80,19 +93,6 @@
         "pl": "optymalizacja konfiguracji zależnej (# 209)\nrok 2026 zmiany\naktualizacja axios\naktualizacji zależności",
         "uk": "оптимізація налаштування залежностей (#209)\nрік 2026 змін\nоновлення axios\nоновлення залежності",
         "zh-cn": "优化依赖配置 (# 209)\n2026年的变化\n更新轴线\n更新依赖关系"
-      },
-      "2.0.4": {
-        "en": "upgrade NPM deployment system\nbump dependencies",
-        "de": "nPM Bereitstellung System\nbumpabhängigkeiten",
-        "ru": "модернизация системы развертывания NPM\nбамп зависимости",
-        "pt": "atualizar sistema de implantação NPM\ndependências de colisão",
-        "nl": "upgrade NPM-implementatiesysteem\nbump afhankelijkheden",
-        "fr": "mise à niveau du système de déploiement NPM\ndépendances des bosses",
-        "it": "aggiornare il sistema di distribuzione NPM\nindipendenza urto",
-        "es": "actualización del sistema de despliegue del mecanismo nacional de prevención\ndependencia de los gastos",
-        "pl": "aktualizacja systemu wdrażania NPM\nuzależnienia od guza",
-        "uk": "оновлення системи розгортання NPM\nbump залежності",
-        "zh-cn": "改进国家预防机制的部署系统\n意外依赖"
       }
     },
     "titleLang": {

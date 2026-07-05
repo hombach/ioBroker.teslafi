@@ -79,8 +79,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 3.0.3 (2026-07-05)
 
 - (hombach) removed unneeded test devDependencies (chai, sinon-chai, proxyquire) and switched tests to Node.js assert
 - (hombach) updated axios
@@ -104,12 +103,6 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 
 - (hombach) switch to ES2023 code
 - (hombach) fix vulnerability in axios
-- (hombach) update dependencies
-
-### 2.0.6 (2026-02-27)
-
-- (hombach) admin 7.6.20 needed by adapter checker
-- (hombach) update axios
 - (hombach) update dependencies
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
