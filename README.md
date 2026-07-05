@@ -82,6 +82,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 
 ### **WORK IN PROGRESS**
 
+- (hombach) removed unneeded test devDependencies (chai, sinon-chai, proxyquire) and switched tests to Node.js assert
 - (hombach) updated axios
 
 ### 3.0.2 (2026-06-19)
