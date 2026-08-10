@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "teslafi",
-    "version": "3.0.3",
+    "version": "3.0.4",
     "news": {
+      "3.0.4": {
+        "en": "projectUtils: use extendObject instead of setObject in forceMode so user customizations survive restarts\nupdated dependencies",
+        "de": "projectUtils: Verwenden Sie in forceMode extendObject anstelle von setObject, damit Benutzeranpassungen auch nach Neustarts erhalten bleiben.\naktualisierte Abhängigkeiten",
+        "ru": "projectUtils: используйте extendObject вместо setObject в forceMode, чтобы пользовательские настройки сохранялись после перезапуска.\nобновленные зависимости",
+        "pt": "projectUtils: use extendObject em vez de setObject em forceMode para que as personalizações do usuário persistam após reinicializações.\ndependências atualizadas",
+        "nl": "projectUtils: gebruik extendObject in plaats van setObject in forceMode zodat gebruikersaanpassingen behouden blijven na herstarts\nbijgewerkte afhankelijkheden",
+        "fr": "projectUtils : utiliser extendObject au lieu de setObject en mode forcé afin que les personnalisations utilisateur soient conservées après un redémarrage.\ndépendances mises à jour",
+        "it": "projectUtils: utilizzare extendObject invece di setObject in forceMode in modo che le personalizzazioni dell'utente persistano dopo il riavvio\ndipendenze aggiornate",
+        "es": "projectUtils: utilice extendObject en lugar de setObject en forceMode para que las personalizaciones del usuario se conserven tras los reinicios.\ndependencias actualizadas",
+        "pl": "projectUtils: użyj extendObject zamiast setObject w forceMode, aby dostosowania użytkownika przetrwały ponowne uruchomienia\nzaktualizowane zależności",
+        "uk": "projectUtils: використано extendObject замість setObject у forceMode, щоб налаштування користувача зберігалися після перезапусків\nоновлені залежності",
+        "zh-cn": "projectUtils：在 forceMode 模式下使用 extendObject 而不是 setObject，以便用户自定义设置能够保留在重启后。\n更新依赖项"
+      },
       "3.0.3": {
         "en": "removed unneeded test devDependencies (chai, sinon-chai, proxyquire) and switched tests to Node.js assert\nupdated axios",
         "de": "Nicht benötigte Testabhängigkeiten (chai, sinon-chai, proxyquire) wurden entfernt und die Tests auf Node.js-Assertions umgestellt.\naktualisiertes Axios",
@@ -80,19 +93,6 @@
         "pl": "aktualizacja axios\naktualizacji zależności",
         "uk": "оновлення axios\nоновлення залежності",
         "zh-cn": "更新轴线\n更新依赖关系"
-      },
-      "2.0.5": {
-        "en": "optimize dependabot config (#209)\nyear 2026 changes\nupdate axios\nupdate dependencies",
-        "de": "optimieren abhängigabot config (#209)\njahr 2026 änderungen\naxios\naktualisierung der abhängigkeiten",
-        "ru": "оптимизируйте конфигурацию зависимого робота (#209)\n2026 год изменения\nобновление axios\nобновление зависимостей",
-        "pt": "otimizar a configuração do dependebot (# 209)\nvariações do ano de 2026\natualizar axios\natualizar dependências",
-        "nl": "dependabot config optimaliseren (#209)\njaar 2026 veranderingen\naxios bijwerken\nafhankelijkheden bijwerken",
-        "fr": "optimiser la configuration de base (#209)\nannée 2026 changements\nmettre à jour axios\nmettre à jour les dépendances",
-        "it": "ottimizzare la configurazione dipendeabot (#209)\nanno 2026 modifiche\naggiornamento assio\naggiornamento dipendenze",
-        "es": "optimizar config de dependabot (#209)\naño 2026 cambios\nactualización axios\ndependencias de actualización",
-        "pl": "optymalizacja konfiguracji zależnej (# 209)\nrok 2026 zmiany\naktualizacja axios\naktualizacji zależności",
-        "uk": "оптимізація налаштування залежностей (#209)\nрік 2026 змін\nоновлення axios\nоновлення залежності",
-        "zh-cn": "优化依赖配置 (# 209)\n2026年的变化\n更新轴线\n更新依赖关系"
       }
     },
     "titleLang": {
