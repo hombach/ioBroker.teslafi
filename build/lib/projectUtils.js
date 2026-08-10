@@ -6,6 +6,9 @@ class ProjectUtils {
     constructor(adapter) {
         this.adapter = adapter;
     }
+    sanitizeIdSegment(text) {
+        return text.replace(this.adapter.FORBIDDEN_CHARS, "_").trim();
+    }
     async getStateValue(stateName) {
         try {
             const stateObject = await this.getState(stateName);
@@ -61,7 +64,7 @@ class ProjectUtils {
             else {
                 const stateValueObject = await this.adapter.getForeignStateAsync(stateName);
                 if (!this.isLikeEmpty(stateValueObject)) {
-                    return stateValueObject;
+                    return stateValueObject ?? null;
                 }
                 throw new Error(`Unable to retrieve info from state '${stateName}'.`);
             }
@@ -92,7 +95,7 @@ class ProjectUtils {
                 write: writeable,
             };
             await (forceMode
-                ? this.adapter.setObject(stateName, { type: "state", common: commonObj, native: {} })
+                ? this.adapter.extendObject(stateName, { type: "state", common: commonObj, native: {} })
                 : this.adapter.setObjectNotExistsAsync(stateName, { type: "state", common: commonObj, native: {} }));
             if (!dontUpdate || !(await this.adapter.getStateAsync(stateName))) {
                 await this.adapter.setState(stateName, { val: value, ack: true });
@@ -114,7 +117,7 @@ class ProjectUtils {
                 ...(step != null ? { step } : {}),
             };
             await (forceMode
-                ? this.adapter.setObject(stateName, { type: "state", common: commonObj, native: {} })
+                ? this.adapter.extendObject(stateName, { type: "state", common: commonObj, native: {} })
                 : this.adapter.setObjectNotExistsAsync(stateName, { type: "state", common: commonObj, native: {} }));
             if (!dontUpdate || !(await this.adapter.getStateAsync(stateName))) {
                 await this.adapter.setState(stateName, { val: value, ack: true });
@@ -132,7 +135,7 @@ class ProjectUtils {
                 write: writeable,
             };
             await (forceMode
-                ? this.adapter.setObject(stateName, { type: "state", common: commonObj, native: {} })
+                ? this.adapter.extendObject(stateName, { type: "state", common: commonObj, native: {} })
                 : this.adapter.setObjectNotExistsAsync(stateName, { type: "state", common: commonObj, native: {} }));
             if (!dontUpdate || !(await this.adapter.getStateAsync(stateName))) {
                 await this.adapter.setState(stateName, { val: value, ack: true });
@@ -149,7 +152,7 @@ class ProjectUtils {
             commonObj.icon = icon;
         }
         await (forceMode
-            ? this.adapter.setObject(folderObjectName, {
+            ? this.adapter.extendObject(folderObjectName, {
                 type: "folder",
                 common: commonObj,
                 native: {},
@@ -174,7 +177,7 @@ class ProjectUtils {
             commonObj.icon = icon;
         }
         await (forceMode
-            ? this.adapter.setObject(deviceObjectName, {
+            ? this.adapter.extendObject(deviceObjectName, {
                 type: "device",
                 common: commonObj,
                 native: {},
@@ -194,7 +197,7 @@ class ProjectUtils {
             commonObj.icon = icon;
         }
         await (forceMode
-            ? this.adapter.setObject(channelObjectName, {
+            ? this.adapter.extendObject(channelObjectName, {
                 type: "channel",
                 common: commonObj,
                 native: {},
@@ -207,21 +210,22 @@ class ProjectUtils {
     }
     generateErrorMessage(error, context) {
         let errorMessages = "";
-        if (error.errors && Array.isArray(error.errors)) {
-            for (const err of error.errors) {
+        const err = (error ?? {});
+        if (err.errors && Array.isArray(err.errors)) {
+            for (const e of err.errors) {
                 if (errorMessages) {
                     errorMessages += ", ";
                 }
-                errorMessages += err.message;
+                errorMessages += e.message;
             }
         }
-        else if (error.message) {
-            errorMessages = error.message;
+        else if (err.message) {
+            errorMessages = err.message;
         }
         else {
             errorMessages = "Unknown error";
         }
-        return `Error (${error.statusMessage || error.statusText || "Unknown Status"}) occurred during: -${context}- : ${errorMessages}`;
+        return `Error (${err.statusMessage || err.statusText || "Unknown Status"}) occurred during: -${context}- : ${errorMessages}`;
     }
 }
 exports.ProjectUtils = ProjectUtils;
