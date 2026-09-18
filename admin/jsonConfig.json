@@ -106,6 +106,75 @@
 				}
 			}
 		},
+		"_GeofenceTab": {
+			"type": "panel",
+			"label": "LBL_GeofenceTab",
+			"items": {
+				"_geofenceHint": {
+					"type": "staticText",
+					"text": "TXT_geofenceHint",
+					"newLine": true,
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12
+				},
+				"geofences": {
+					"type": "table",
+					"label": "LBL_geofences",
+					"hidden": "!data.TeslaFiAPIToken",
+					"newLine": true,
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12,
+					"items": [
+						{
+							"type": "text",
+							"attr": "location",
+							"title": "LBL_gfLocation",
+							"filter": false,
+							"sort": true,
+							"default": "",
+							"width": "30%"
+						},
+						{
+							"type": "number",
+							"attr": "minAwayMinutes",
+							"title": "LBL_gfAwayMin",
+							"min": 0,
+							"default": 10,
+							"width": "17%"
+						},
+						{
+							"type": "checkbox",
+							"attr": "requireMotion",
+							"title": "LBL_gfMotion",
+							"default": true,
+							"width": "15%"
+						},
+						{
+							"type": "number",
+							"attr": "minSpeedKmh",
+							"title": "LBL_gfSpeed",
+							"min": 0,
+							"default": 5,
+							"width": "18%"
+						},
+						{
+							"type": "number",
+							"attr": "debouncePolls",
+							"title": "LBL_gfDebounce",
+							"min": 1,
+							"default": 2,
+							"width": "20%"
+						}
+					]
+				}
+			}
+		},
 		"_CommandTab": {
 			"type": "panel",
 			"label": "LBL_CommandTab",

@@ -1,11 +1,19 @@
 {
     "LBL_CommandTab": "汽车命令设置",
+    "LBL_geofences": "地理围栏",
+    "LBL_GeofenceTab": "地理围栏设置",
+    "LBL_gfAwayMin": "最短离开时间（分钟）",
+    "LBL_gfDebounce": "防抖（轮询次数）",
+    "LBL_gfLocation": "TeslaFi 位置名称",
+    "LBL_gfMotion": "需要移动",
+    "LBL_gfSpeed": "移动速度阈值（公里/小时）",
+    "LBL_helpLink": "显示适配器文档",
     "LBL_SendWakeCommand": "如果汽车处于睡眠状态，请使用“唤醒汽车”命令",
     "LBL_StandardTab": "标准设置",
     "LBL_TeslaFiAPIToken": "TeslaFi API 的令牌",
     "LBL_UpdateInterval": "更新间隔（秒）",
     "LBL_UpdateTimeout": "更新超时（以毫秒为单位）",
     "LBL_UseCarCommands": "启用向汽车发送命令",
-    "LBL_helpLink": "显示适配器文档",
-    "TXT_donateTx": "如果你喜欢这个项目——或者只是觉得慷慨，可以考虑给我买瓶啤酒。干杯! 🍻"
+    "TXT_donateTx": "如果你喜欢这个项目——或者只是觉得慷慨，可以考虑给我买瓶啤酒。干杯! 🍻",
+    "TXT_geofenceHint": "根据 TeslaFi 标记的位置名称（精确匹配）定义地理围栏。每个位置都有存在/进入/离开状态，并带有离开和移动过滤器，以避免误触发。"
 }

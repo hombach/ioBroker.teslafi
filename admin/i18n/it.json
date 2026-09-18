@@ -1,11 +1,19 @@
 {
     "LBL_CommandTab": "Impostazioni dei comandi dell'auto",
+    "LBL_geofences": "Geofence",
+    "LBL_GeofenceTab": "Impostazioni geofence",
+    "LBL_gfAwayMin": "Assenza min. (minuti)",
+    "LBL_gfDebounce": "Antirimbalzo (sondaggi)",
+    "LBL_gfLocation": "Nome posizione TeslaFi",
+    "LBL_gfMotion": "Richiedi movimento",
+    "LBL_gfSpeed": "Soglia di velocità del movimento (km/h)",
+    "LBL_helpLink": "Mostra la documentazione dell'adattatore",
     "LBL_SendWakeCommand": "Usa il comando \"Sveglia auto\" se l'auto dorme",
     "LBL_StandardTab": "Impostazioni standard",
     "LBL_TeslaFiAPIToken": "Token per l'API TeslaFi",
     "LBL_UpdateInterval": "Intervallo di aggiornamento in secondi",
     "LBL_UpdateTimeout": "Timeout aggiornamento in millisecondi",
     "LBL_UseCarCommands": "Abilita l'invio di comandi all'auto",
-    "LBL_helpLink": "Mostra la documentazione dell'adattatore",
-    "TXT_donateTx": "Se ti è piaciuto questo progetto o semplicemente ti senti generoso, valuta l'idea di comprarmi una birra. Saluti! 🍻"
+    "TXT_donateTx": "Se ti è piaciuto questo progetto o semplicemente ti senti generoso, valuta l'idea di comprarmi una birra. Saluti! 🍻",
+    "TXT_geofenceHint": "Definisci i geofence in base ai nomi delle posizioni contrassegnate da TeslaFi (corrispondenza esatta). Ogni posizione ottiene stati presenza/ingresso/uscita con filtri di assenza e movimento per evitare falsi trigger."
 }

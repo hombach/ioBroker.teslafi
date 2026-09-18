@@ -1,11 +1,19 @@
 {
     "LBL_CommandTab": "Paramètres de commande de voiture",
+    "LBL_geofences": "Géorepérages",
+    "LBL_GeofenceTab": "Paramètres de géorepérage",
+    "LBL_gfAwayMin": "Absence min. (minutes)",
+    "LBL_gfDebounce": "Anti-rebond (sondages)",
+    "LBL_gfLocation": "Nom du lieu TeslaFi",
+    "LBL_gfMotion": "Mouvement requis",
+    "LBL_gfSpeed": "Seuil de vitesse de mouvement (km/h)",
+    "LBL_helpLink": "Afficher la documentation de l'adaptateur",
     "LBL_SendWakeCommand": "Utilisez la commande « Wake Car » si la voiture dort",
     "LBL_StandardTab": "Paramètres standards",
     "LBL_TeslaFiAPIToken": "Jeton pour l'API TeslaFi",
     "LBL_UpdateInterval": "Intervalle de mise à jour en secondes",
     "LBL_UpdateTimeout": "Délai d'expiration de la mise à jour en millisecondes",
     "LBL_UseCarCommands": "Activer l'envoi de commandes à la voiture",
-    "LBL_helpLink": "Afficher la documentation de l'adaptateur",
-    "TXT_donateTx": "Si vous avez apprécié ce projet – ou si vous vous sentez simplement généreux, pensez à m'acheter une bière. Acclamations! 🍻"
+    "TXT_donateTx": "Si vous avez apprécié ce projet – ou si vous vous sentez simplement généreux, pensez à m'acheter une bière. Acclamations! 🍻",
+    "TXT_geofenceHint": "Définissez des géorepérages à partir des noms de lieux étiquetés par TeslaFi (correspondance exacte). Chaque lieu obtient des états présence/entrée/sortie avec des filtres d'absence et de mouvement pour éviter les déclenchements intempestifs."
 }
