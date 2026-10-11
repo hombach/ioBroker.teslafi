@@ -117,8 +117,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 3.1.0 (2026-10-11)
 
 - (hombach) added geofence presence/enter/leave with away- and motion-gates (#325)
 - (hombach) fixed speed unit: `vehicle-state.speed` is now labeled mph and a new `vehicle-state.speed_km` (km/h) was added
@@ -146,11 +145,6 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 - (hombach) upgraded TypeScript to 6.x
 - (hombach) fixed warnings by adapter checker
 - (hombach) updated dependencies
-
-### 3.0.0 (2026-05-05)
-
-- (copilot) BREAKING: adapter requires node.js >= 22 now
-- (hombach) update dependencies
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 

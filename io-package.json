@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "teslafi",
-    "version": "3.0.4",
+    "version": "3.1.0",
     "news": {
+      "3.1.0": {
+        "en": "added geofence presence/enter/leave with away- and motion-gates (#325)\nfixed speed unit: `vehicle-state.speed` is now labeled mph and a new `vehicle-state.speed_km` (km/h) was added\ngeofence: harden against invalid config values, non-numeric speed and colliding/duplicate location names\nspeed unit label is now also corrected on existing installations\nswitch to iobroker testing 6.x\nupdated dependencies",
+        "de": "Geofence Presence/Enter/Leave mit Away- und Motion-Gates hinzugefügt (#325)\nfeste Geschwindigkeitseinheit: `Vehicle-State.speed` heißt jetzt mph und ein neues `Vehicle-State.speed_km` (km/h)\nGeofence: Schutz vor ungültigen Konfigurationswerten, unnumerischer Geschwindigkeit und Ortsnamen\nDie Geschwindigkeitsangabe ist nun auch bei bestehenden Anlagen korrigiert\nzu iobroker test 6.x wechseln\nNeue Abhängigkeiten",
+        "ru": "добавлено присутствие геозоны, вход и выход из нее с помощью дальних и движущихся ворот (#325)\nединица фиксированной скорости: `vehicle-state.speed` теперь обозначается как миль/ч, и добавлен новый параметр `vehicle-state.speed_km` (км/ч)\ngeofence: защита от неверных значений конфигурации, нечисловой скорости и совпадающих/повторяющихся названий местоположений\nМаркировка единиц скорости теперь также исправлена на существующих установках\nперейти к тестированию iobroker 6.x\nобновленные зависимости",
+        "pt": "adicionou geofence presença/saída com portas de saída e movimento (#325)\nunidade de velocidade fixa: `vehicle-state.speed` agora é mph e um novo `vehicle-state.speed_km` (km/h) foi adicionado\ngeofence: proteja valores de configuração inválidos, velocidade não numérica e colisões\nO rótulo do acelerador agora também é corrigido em instalações\nvá para o teste iobroker 6.x\nnovas dependências",
+        "nl": "geofence presence/enter/leave toegevoegd met uit- en bewegingspoorten (#325)\neenheid met vaste snelheid: `vehicle-state.speed` heeft nu het label mph en er is een nieuwe `vehicle-state.speed_km` (km/h) toegevoegd\ngeofence: verhard tegen ongeldige configuratiewaarden, niet-numerieke snelheid en botsingen/dubbele locatienamen\nHet label van de snelheidseenheid is nu ook gecorrigeerd op bestaande installaties\noverschakelen naar iobroker testing 6.x\nbijgewerkte afhankelijkheden",
+        "fr": "ajout d'un géofence présence/entrée/sortie avec portes d'accès et de mouvement (#325)\nunité de vitesse fixe : « vehicle-state.speed » s'appelle désormais mph et un nouveau « vehicle-state.speed_km » (km/h) a été ajouté\ngeofence : renforcement contre les valeurs de configuration invalides, la vitesse non numérique et les noms de lieux\nle label Speed Unit a été corrigé sur les installations existantes\npasser à iobroker testing 6.x\ndépendances mises à jour",
+        "it": "aggiunto geofence presence/enter/leave con cancelli e cancelli (#325)\nunità a velocità fissa: `veicolo.speed` è ora etichettato mph ed è stato aggiunto un nuovo `state.speed_km` (km/h)\ngeofence: tempra valori di configurazione non validi, velocità non numerica e nomi di località duplicati\nl'etichetta Speed Unit è ora corretta anche per impianti esistenti\npassare a iobroker testing 6.x\ndipendenze aggiornate",
+        "es": "añadió geofence presencia/entrada/salida con puertas de paso y movimiento (#325)\nunidad de velocidad fija: `estado del vehículo.velocidad` pasa ahora a mph y se ha añadido un nuevo estado del vehículo.velocidad_km (km/h)\ngeofence: endurece contra valores de configuración no válidos, velocidad no numérica y nombres de ubicaciones que chocan o duplican\nLa etiqueta speed unit también está corregida en las instalaciones actuales\ncambiar a iobroker testing 6.x\ndependencias actualizadas",
+        "pl": "dodano geofence presence/enter/leave z bramkami wyjazdowymi i ruchowymi (#325)\njednostka stałej prędkości: „vehicle-state.speed” jest teraz oznaczona jako mph i dodano nowy „vehicle-state.speed_km” (km/h)\ngeofence: utwardzanie przed nieprawidłowymi wartościami konfiguracyjnymi, prędkością nienumeryczną i zderzeniami/zduplikowaniem nazw lokalizacji\nEtykieta jednostki prędkości jest teraz korygowana również na istniejących instalacjach\nprzejdź do testowania iobroker 6.x\nzaktualizowane zależności",
+        "uk": "додано географічну присутність/входити/вийти з відстороненими та руховими воротами (#325)\nодиниця фіксованої швидкості: «стан транспортного засобу. Швидкість» тепер позначено миль/год, а також додано новий «стан транспортного засобу. Швидкість_км» (км/год)\ngeofence: посилення проти недійсних значень конфігурації, нечислової швидкості та злиття/дублювання назв місцезнаходжень\nЕтикетка одиниці швидкості тепер також виправлена на існуючих установках\nпереключитися на тестування іоброкера 6.x\nоновлені залежності",
+        "zh-cn": "添加了地理围栏存在/使用离场和动作门进入/离开 (#325)\n固定速度单位：“vehicle-state.speed” 现在标记为 mph，并添加了新的 “vehicle-state.speed_km” (km/h)\ngeofence：强化对抗无效的配置值、非数字速度和碰撞/重复的位置名称\n现在还更正了现有装置的速度单位标签\n切换到 iobroker 测试 6.x\n更新的依赖关系"
+      },
       "3.0.4": {
         "en": "projectUtils: use extendObject instead of setObject in forceMode so user customizations survive restarts\nupdated dependencies",
         "de": "projectUtils: Verwenden Sie in forceMode extendObject anstelle von setObject, damit Benutzeranpassungen auch nach Neustarts erhalten bleiben.\naktualisierte Abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "przełączanie na kod ES2023\nnaprawić wrażliwość w aksjozach\naktualizacji zależności",
         "uk": "перемкніть код ES2023\nзафіксувати вразливість в осях\nоновлення залежності",
         "zh-cn": "切换到 ES2023 代码\n在轴线中固定脆弱性\n更新依赖关系"
-      },
-      "2.0.6": {
-        "en": "update axios\nupdate dependencies",
-        "de": "axios\naktualisierung der abhängigkeiten",
-        "ru": "обновление axios\nобновление зависимостей",
-        "pt": "atualizar axios\natualizar dependências",
-        "nl": "axios bijwerken\nafhankelijkheden bijwerken",
-        "fr": "mettre à jour axios\nmettre à jour les dépendances",
-        "it": "aggiornamento assio\naggiornamento dipendenze",
-        "es": "actualización axios\ndependencias de actualización",
-        "pl": "aktualizacja axios\naktualizacji zależności",
-        "uk": "оновлення axios\nоновлення залежності",
-        "zh-cn": "更新轴线\n更新依赖关系"
       }
     },
     "titleLang": {
