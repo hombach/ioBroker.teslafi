@@ -82,6 +82,8 @@ For each configured location the adapter creates:
 - `geofence.<Location>.leave` – pulses `true` for a single poll on departure
 - `geofence.<Location>.awaySince` – timestamp (ms) since the car left; `0` while present
 
+`<Location>` is the TeslaFi location name with characters that are not allowed in ioBroker object IDs replaced by `_`. For example a location tagged `My Home` results in the states `geofence.My_Home.*`.
+
 No `enter` event is emitted on adapter startup, and GPS fluctuations while parked do not produce events.
 
 ### Example: open the garage on homecoming
@@ -120,6 +122,8 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 
 - (hombach) added geofence presence/enter/leave with away- and motion-gates (#325)
 - (hombach) fixed speed unit: `vehicle-state.speed` is now labeled mph and a new `vehicle-state.speed_km` (km/h) was added
+- (hombach) geofence: harden against invalid config values, non-numeric speed and colliding/duplicate location names
+- (hombach) speed unit label is now also corrected on existing installations
 - (hombach) switch to iobroker testing 6.x
 - (hombach) updated dependencies
 

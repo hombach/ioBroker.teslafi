@@ -639,19 +639,26 @@ export class TeslaFiAPICaller extends ProjectUtils {
 				);
 			}
 			// TeslaFi delivers speed in mph (raw imperial, like odometer). Expose mph and a converted km/h value.
+			// forceMode=true on the mph state so existing installations get the corrected unit:
+			// before this change the object was created with unit "km/h" while the value was already mph.
 			let speedKmh = 0;
-			if (stVD.speed.value !== null) {
+			const speedMph = stVD.speed.value !== null ? parseFloat(stVD.speed.value) : NaN;
+			if (Number.isFinite(speedMph)) {
 				//"28"
-				speedKmh = Math.round(parseFloat(stVD.speed.value) * MILES_TO_KM * 100) / 100;
+				speedKmh = Math.round(speedMph * MILES_TO_KM * 100) / 100;
 				void this.checkAndSetValueNumber(
 					`vehicle-state.${stVD.speed.key}`,
-					Math.round(parseFloat(stVD.speed.value) * 100) / 100,
+					Math.round(speedMph * 100) / 100,
 					stVD.speed.desc,
 					"mph",
+					"value",
+					false,
+					false,
+					true,
 				);
 				void this.checkAndSetValueNumber(`vehicle-state.${stVD.speed.key}_km`, speedKmh, stVD.speed.desc, "km/h");
 			} else {
-				void this.checkAndSetValueNumber(`vehicle-state.${stVD.speed.key}`, 0, stVD.speed.desc, "mph");
+				void this.checkAndSetValueNumber(`vehicle-state.${stVD.speed.key}`, 0, stVD.speed.desc, "mph", "value", false, false, true);
 				void this.checkAndSetValueNumber(`vehicle-state.${stVD.speed.key}_km`, 0, stVD.speed.desc, "km/h");
 			}
 			//#endregion

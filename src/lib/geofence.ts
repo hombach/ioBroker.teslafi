@@ -61,7 +61,11 @@ export function createGeofenceRuntime(): GeofenceRuntime {
  */
 export function evaluateGeofence(prev: GeofenceRuntime, input: GeofenceInput, cfg: ioBroker.GeofenceConfig, firstRun: boolean): GeofenceDecision {
 	const rt: GeofenceRuntime = { ...prev };
+	// Defensively coerce config numbers: an empty admin-table field can yield undefined/NaN,
+	// which would otherwise make the gates permanently unsatisfiable (NaN comparisons are always false).
 	const debounce = Math.max(1, Math.floor(cfg.debouncePolls || 1));
+	const minAwayMs = (Number.isFinite(cfg.minAwayMinutes) ? cfg.minAwayMinutes : 0) * 60000;
+	const minSpeedKmh = Number.isFinite(cfg.minSpeedKmh) ? cfg.minSpeedKmh : 0;
 
 	// First run after (re)start: initialize presence without emitting any event.
 	if (firstRun) {
@@ -79,7 +83,7 @@ export function evaluateGeofence(prev: GeofenceRuntime, input: GeofenceInput, cf
 	}
 
 	// Motion gate bookkeeping: remember whether the car moved during the current absence.
-	if (!rt.present && input.speedKmh >= cfg.minSpeedKmh) {
+	if (!rt.present && input.speedKmh >= minSpeedKmh) {
 		rt.sawMotion = true;
 	}
 
@@ -90,7 +94,7 @@ export function evaluateGeofence(prev: GeofenceRuntime, input: GeofenceInput, cf
 		rt.enterCount += 1;
 		rt.awayCount = 0;
 		if (!rt.present) {
-			const awayGateOk = rt.awaySince > 0 && input.now - rt.awaySince >= cfg.minAwayMinutes * 60000;
+			const awayGateOk = rt.awaySince > 0 && input.now - rt.awaySince >= minAwayMs;
 			const motionGateOk = !cfg.requireMotion || rt.sawMotion;
 			const debounceOk = rt.enterCount >= debounce;
 			if (awayGateOk && motionGateOk && debounceOk) {
@@ -153,6 +157,64 @@ export class GeofenceProcessor extends ProjectUtils {
 	}
 
 	/**
+	 * Resolves configured geofences to unique state-id segments, dropping rows that would
+	 * collide on the same object id (duplicate names, or names that sanitize to the same id).
+	 *
+	 * @param warnOnCollision - Log a warning for each dropped row (used once during setup).
+	 * @returns One entry per unique location with its sanitized id and base state path.
+	 */
+	private resolveConfigs(warnOnCollision = false): { cfg: ioBroker.GeofenceConfig; id: string; base: string }[] {
+		const seen = new Map<string, ioBroker.GeofenceConfig>();
+		const resolved: { cfg: ioBroker.GeofenceConfig; id: string; base: string }[] = [];
+		for (const cfg of this.configs) {
+			const id = this.sanitizeIdSegment(cfg.location);
+			const existing = seen.get(id);
+			if (existing) {
+				if (warnOnCollision) {
+					this.adapter.log.warn(
+						`Geofence '${cfg.location}' maps to the same state id '${id}' as '${existing.location}' and is ignored - please use distinct location names.`,
+					);
+				}
+				continue;
+			}
+			seen.set(id, cfg);
+			resolved.push({ cfg, id, base: `${this.basePath}.${id}` });
+		}
+		return resolved;
+	}
+
+	/**
+	 * Writes the four per-location geofence states. Shared by setup and per-poll processing
+	 * so the state ids, roles and descriptions stay defined in exactly one place.
+	 *
+	 * @param base - Base state path for the location (e.g. `geofence.Home`).
+	 * @param snap - Current values for present / enter / leave / awaySince.
+	 * @param snap.present - Confirmed presence value to write.
+	 * @param snap.enter - Enter-event pulse value for this poll.
+	 * @param snap.leave - Leave-event pulse value for this poll.
+	 * @param snap.awaySince - Timestamp (ms) since the car left; 0 while present.
+	 * @param dontUpdateAway - If true, awaySince is only created, not overwritten (preserves a persisted value).
+	 */
+	private async writeGeofenceStates(
+		base: string,
+		snap: { present: boolean; enter: boolean; leave: boolean; awaySince: number },
+		dontUpdateAway = false,
+	): Promise<void> {
+		await this.checkAndSetValueBoolean(`${base}.present`, snap.present, "Confirmed presence at this location", "indicator");
+		await this.checkAndSetValueBoolean(`${base}.enter`, snap.enter, "Enter event - pulses true for a single poll", "indicator");
+		await this.checkAndSetValueBoolean(`${base}.leave`, snap.leave, "Leave event - pulses true for a single poll", "indicator");
+		await this.checkAndSetValueNumber(
+			`${base}.awaySince`,
+			snap.awaySince,
+			"Timestamp (ms) since the car left this location; 0 while present",
+			undefined,
+			"value.time",
+			false,
+			dontUpdateAway,
+		);
+	}
+
+	/**
 	 * SetupGeofenceStates
 	 *
 	 * Creates the geofence folder and per-location states, and restores persisted
@@ -162,38 +224,26 @@ export class GeofenceProcessor extends ProjectUtils {
 	async SetupGeofenceStates(): Promise<void> {
 		this.firstRun = true;
 		this.runtime.clear();
-		const cfgs = this.configs;
+		const cfgs = this.resolveConfigs(true);
 		if (cfgs.length === 0) {
 			return;
 		}
 		await this.checkAndSetFolder(this.basePath, "Geofence");
 
-		for (const cfg of cfgs) {
-			const base = `${this.basePath}.${this.sanitizeIdSegment(cfg.location)}`;
+		for (const { cfg, id, base } of cfgs) {
 			await this.checkAndSetChannel(base, cfg.location);
 
 			// Restore persisted values (null if the states do not exist yet).
 			const persistedAway = Number(await this.getStateValue(`${base}.awaySince`)) || 0;
 			const persistedPresent = Boolean(await this.getStateValue(`${base}.present`));
-			this.runtime.set(cfg.location, {
+			this.runtime.set(id, {
 				...createGeofenceRuntime(),
 				present: persistedPresent,
 				awaySince: persistedAway,
 			});
 
 			// Ensure the states exist. awaySince uses dontUpdate=true so a persisted value is not clobbered.
-			await this.checkAndSetValueBoolean(`${base}.present`, persistedPresent, "Confirmed presence at this location", "indicator");
-			await this.checkAndSetValueBoolean(`${base}.enter`, false, "Enter event - pulses true for a single poll", "indicator");
-			await this.checkAndSetValueBoolean(`${base}.leave`, false, "Leave event - pulses true for a single poll", "indicator");
-			await this.checkAndSetValueNumber(
-				`${base}.awaySince`,
-				persistedAway,
-				"Timestamp (ms) since the car left this location; 0 while present",
-				undefined,
-				"value.time",
-				false,
-				true,
-			);
+			await this.writeGeofenceStates(base, { present: persistedPresent, enter: false, leave: false, awaySince: persistedAway }, true);
 		}
 	}
 
@@ -207,7 +257,7 @@ export class GeofenceProcessor extends ProjectUtils {
 	 * @param speedKmh - The current speed converted to km/h.
 	 */
 	async ProcessGeofences(location: string | null | undefined, speedKmh: number): Promise<void> {
-		const cfgs = this.configs;
+		const cfgs = this.resolveConfigs();
 		if (cfgs.length === 0) {
 			return;
 		}
@@ -217,24 +267,19 @@ export class GeofenceProcessor extends ProjectUtils {
 			await this.checkAndSetValue(`${this.basePath}.current`, loc, "Currently tagged location");
 		}
 
-		for (const cfg of cfgs) {
-			const base = `${this.basePath}.${this.sanitizeIdSegment(cfg.location)}`;
-			const prev = this.runtime.get(cfg.location) ?? createGeofenceRuntime();
+		for (const { cfg, id, base } of cfgs) {
+			const prev = this.runtime.get(id) ?? createGeofenceRuntime();
 			const isHere = loc === cfg.location;
 
 			const { runtime, enterEvent, leaveEvent } = evaluateGeofence(prev, { isHere, speedKmh, now }, cfg, this.firstRun);
-			this.runtime.set(cfg.location, runtime);
+			this.runtime.set(id, runtime);
 
-			await this.checkAndSetValueBoolean(`${base}.present`, runtime.present, "Confirmed presence at this location", "indicator");
-			await this.checkAndSetValueBoolean(`${base}.enter`, enterEvent, "Enter event - pulses true for a single poll", "indicator");
-			await this.checkAndSetValueBoolean(`${base}.leave`, leaveEvent, "Leave event - pulses true for a single poll", "indicator");
-			await this.checkAndSetValueNumber(
-				`${base}.awaySince`,
-				runtime.awaySince,
-				"Timestamp (ms) since the car left this location; 0 while present",
-				undefined,
-				"value.time",
-			);
+			await this.writeGeofenceStates(base, {
+				present: runtime.present,
+				enter: enterEvent,
+				leave: leaveEvent,
+				awaySince: runtime.awaySince,
+			});
 
 			if (enterEvent) {
 				this.adapter.log.info(`Geofence '${cfg.location}': ENTER event fired`);

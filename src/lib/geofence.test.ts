@@ -154,6 +154,33 @@ describe("evaluateGeofence", () => {
 		assert.equal(r.runtime.present, false);
 	});
 
+	it("treats an empty/NaN minAwayMinutes as no away requirement instead of blocking enter forever", () => {
+		// Simulate an admin table row where the number field was cleared -> undefined at runtime.
+		const cfg = makeConfig({ requireMotion: false, minAwayMinutes: undefined as unknown as number });
+		let rt = evaluateGeofence(createGeofenceRuntime(), { isHere: true, speedKmh: 0, now: 0 }, cfg, true).runtime;
+		rt = evaluateGeofence(rt, { isHere: false, speedKmh: 0, now: 1 * MIN }, cfg, false).runtime;
+		rt = evaluateGeofence(rt, { isHere: false, speedKmh: 0, now: 2 * MIN }, cfg, false).runtime;
+		let r = evaluateGeofence(rt, { isHere: true, speedKmh: 0, now: 3 * MIN }, cfg, false);
+		rt = r.runtime;
+		r = evaluateGeofence(rt, { isHere: true, speedKmh: 0, now: 4 * MIN }, cfg, false);
+		assert.equal(r.enterEvent, true, "enter still fires with an unset away gate");
+	});
+
+	it("treats an empty/NaN minSpeedKmh as motion on any non-zero poll instead of blocking the motion gate", () => {
+		const cfg = makeConfig({ requireMotion: true, minSpeedKmh: NaN });
+		let rt = evaluateGeofence(createGeofenceRuntime(), { isHere: true, speedKmh: 0, now: 0 }, cfg, true).runtime;
+		// two away polls to debounce the leave, then one more while truly away so motion is evaluated
+		rt = evaluateGeofence(rt, { isHere: false, speedKmh: 0, now: 1 * MIN }, cfg, false).runtime;
+		rt = evaluateGeofence(rt, { isHere: false, speedKmh: 0, now: 2 * MIN }, cfg, false).runtime;
+		rt = evaluateGeofence(rt, { isHere: false, speedKmh: 0, now: 3 * MIN }, cfg, false).runtime;
+		// any speed (>= 0) now counts as motion, so the motion gate is satisfied
+		assert.equal(rt.sawMotion, true, "motion recorded with unset speed threshold");
+		let r = evaluateGeofence(rt, { isHere: true, speedKmh: 0, now: 30 * MIN }, cfg, false);
+		rt = r.runtime;
+		r = evaluateGeofence(rt, { isHere: true, speedKmh: 0, now: 31 * MIN }, cfg, false);
+		assert.equal(r.enterEvent, true, "enter fires despite unset speed threshold");
+	});
+
 	it("does not fire enter when the car arrived during downtime (restart while home)", () => {
 		const cfg = makeConfig();
 		// persisted state says the car was away
