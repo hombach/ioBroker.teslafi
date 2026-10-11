@@ -33,6 +33,7 @@ class TeslaFi extends utils.Adapter {
 			// WIP const teslaFiAPICaller = new TeslaFiAPICaller(this);
 			try {
 				this.teslaFiAPICaller.SetupCommandStates();
+				await this.teslaFiAPICaller.geofence.SetupGeofenceStates();
 				// set info.connection if data received
 				if (await this.teslaFiAPICaller.ReadTeslaFi()) {
 					void this.setState("info.connection", true, true);

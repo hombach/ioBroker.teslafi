@@ -9,6 +9,20 @@ declare global {
 			UpdateTimeout: number;
 			UseCarCommands: boolean;
 			SendWakeCommand: boolean;
+			geofences: GeofenceConfig[];
+		}
+
+		interface GeofenceConfig {
+			/** TeslaFi tagged location name to match exactly (e.g. "Home") */
+			location: string;
+			/** Minimum minutes the car must have been away before an enter event may fire */
+			minAwayMinutes: number;
+			/** Require that the car actually moved (speed >= minSpeedKmh) at least once while away */
+			requireMotion: boolean;
+			/** Speed threshold in km/h that counts as motion */
+			minSpeedKmh: number;
+			/** Number of consecutive polls a location change must persist before enter/leave fires */
+			debouncePolls: number;
 		}
 	}
 }

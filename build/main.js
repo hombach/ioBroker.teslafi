@@ -56,6 +56,7 @@ class TeslaFi extends utils.Adapter {
         else {
             try {
                 this.teslaFiAPICaller.SetupCommandStates();
+                await this.teslaFiAPICaller.geofence.SetupGeofenceStates();
                 if (await this.teslaFiAPICaller.ReadTeslaFi()) {
                     void this.setState("info.connection", true, true);
                     this.log.debug(`received data in first poll - good connection`);

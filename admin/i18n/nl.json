@@ -1,11 +1,19 @@
 {
     "LBL_CommandTab": "Instellingen voor autocommando's",
+    "LBL_geofences": "Geofences",
+    "LBL_GeofenceTab": "Geofence-instellingen",
+    "LBL_gfAwayMin": "Min. afwezig (minuten)",
+    "LBL_gfDebounce": "Ontdenderen (polls)",
+    "LBL_gfLocation": "TeslaFi-locatienaam",
+    "LBL_gfMotion": "Beweging vereist",
+    "LBL_gfSpeed": "Bewegingssnelheidsdrempel (km/u)",
+    "LBL_helpLink": "Adapterdocumentatie tonen",
     "LBL_SendWakeCommand": "Gebruik het commando 'Wake Car' als de auto slaapt",
     "LBL_StandardTab": "Standaardinstellingen",
     "LBL_TeslaFiAPIToken": "Token voor TeslaFi-API",
     "LBL_UpdateInterval": "Update-interval in seconden",
     "LBL_UpdateTimeout": "Updatetime-out in milliseconden",
     "LBL_UseCarCommands": "Schakel het verzenden van opdrachten naar de auto in",
-    "LBL_helpLink": "Adapterdocumentatie tonen",
-    "TXT_donateTx": "Als je van dit project hebt genoten – of je gewoon vrijgevig bent, overweeg dan om een ​​biertje voor me te kopen. Proost! 🍻"
+    "TXT_donateTx": "Als je van dit project hebt genoten – of je gewoon vrijgevig bent, overweeg dan om een ​​biertje voor me te kopen. Proost! 🍻",
+    "TXT_geofenceHint": "Definieer geofences op basis van de door TeslaFi getagde locatienamen (exacte overeenkomst). Elke locatie krijgt aanwezigheids-/binnenkomst-/vertrekstatussen met afwezigheids- en bewegingsfilters om valse triggers te voorkomen."
 }

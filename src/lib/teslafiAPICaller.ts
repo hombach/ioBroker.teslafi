@@ -1,7 +1,11 @@
 import type * as utils from "@iobroker/adapter-core";
 import axios, { type AxiosError } from "axios";
 import { add, format, fromUnixTime } from "date-fns";
+import { GeofenceProcessor } from "./geofence";
 import { ProjectUtils } from "./projectUtils";
+
+/** Conversion factor from miles to kilometers (used for speed and distance). */
+const MILES_TO_KM = 1.609344;
 
 const axiosInstance = axios.create({
 	//timeout: 5000, //by default
@@ -263,6 +267,7 @@ function calculateEndTimeFromNow(hours: number, dateFormat = "dd.MM.yyyy HH:mm:s
  */
 export class TeslaFiAPICaller extends ProjectUtils {
 	queryUrl = "";
+	geofence: GeofenceProcessor;
 
 	/**
 	 * constructor
@@ -272,6 +277,7 @@ export class TeslaFiAPICaller extends ProjectUtils {
 	constructor(adapter: utils.AdapterInstance) {
 		super(adapter);
 		this.queryUrl = "https://www.teslafi.com/feed.php?token=";
+		this.geofence = new GeofenceProcessor(adapter);
 	}
 
 	/**
@@ -632,18 +638,26 @@ export class TeslaFiAPICaller extends ProjectUtils {
 					"km",
 				);
 			}
+			// TeslaFi delivers speed in mph (raw imperial, like odometer). Expose mph and a converted km/h value.
+			let speedKmh = 0;
 			if (stVD.speed.value !== null) {
 				//"28"
+				speedKmh = Math.round(parseFloat(stVD.speed.value) * MILES_TO_KM * 100) / 100;
 				void this.checkAndSetValueNumber(
 					`vehicle-state.${stVD.speed.key}`,
 					Math.round(parseFloat(stVD.speed.value) * 100) / 100,
 					stVD.speed.desc,
-					"km/h",
+					"mph",
 				);
+				void this.checkAndSetValueNumber(`vehicle-state.${stVD.speed.key}_km`, speedKmh, stVD.speed.desc, "km/h");
 			} else {
-				void this.checkAndSetValueNumber(`vehicle-state.${stVD.speed.key}`, 0, stVD.speed.desc, "km/h");
+				void this.checkAndSetValueNumber(`vehicle-state.${stVD.speed.key}`, 0, stVD.speed.desc, "mph");
+				void this.checkAndSetValueNumber(`vehicle-state.${stVD.speed.key}_km`, 0, stVD.speed.desc, "km/h");
 			}
 			//#endregion
+
+			// process geofences based on the tagged location and the converted speed
+			await this.geofence.ProcessGeofences(stVD.location.value, speedKmh);
 
 			//#region *** "battery-state" properties ***
 			if (stVD.battery_level.value !== null) {

@@ -179,7 +179,8 @@
     "teslafiapitokenpass": "",
     "TeslaFiAPIToken": "",
     "UpdateInterval": "60",
-    "UpdateTimeout": 5000
+    "UpdateTimeout": 5000,
+    "geofences": []
   },
   "objects": [],
   "instanceObjects": [

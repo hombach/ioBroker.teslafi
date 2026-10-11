@@ -6,7 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TeslaFiAPICaller = void 0;
 const axios_1 = __importDefault(require("axios"));
 const date_fns_1 = require("date-fns");
+const geofence_1 = require("./geofence");
 const projectUtils_1 = require("./projectUtils");
+const MILES_TO_KM = 1.609344;
 const axiosInstance = axios_1.default.create({});
 const stVD = {
     Date: { key: `Date`, desc: `Last connection to your Tesla`, value: "" },
@@ -203,9 +205,11 @@ function calculateEndTimeFromNow(hours, dateFormat = "dd.MM.yyyy HH:mm:ss") {
 }
 class TeslaFiAPICaller extends projectUtils_1.ProjectUtils {
     queryUrl = "";
+    geofence;
     constructor(adapter) {
         super(adapter);
         this.queryUrl = "https://www.teslafi.com/feed.php?token=";
+        this.geofence = new geofence_1.GeofenceProcessor(adapter);
     }
     SetupCommandStates() {
         if (this.adapter.config.UseCarCommands) {
@@ -362,12 +366,17 @@ class TeslaFiAPICaller extends projectUtils_1.ProjectUtils {
                 void this.checkAndSetValueNumber(`vehicle-state.${stVD.odometer.key}`, Math.round(parseFloat(stVD.odometer.value) * 100) / 100, stVD.odometer.desc, "mi");
                 void this.checkAndSetValueNumber(`vehicle-state.${stVD.odometer.key}_km`, Math.round(parseFloat(stVD.odometer.value) * 160.934) / 100, stVD.odometer.desc, "km");
             }
+            let speedKmh = 0;
             if (stVD.speed.value !== null) {
-                void this.checkAndSetValueNumber(`vehicle-state.${stVD.speed.key}`, Math.round(parseFloat(stVD.speed.value) * 100) / 100, stVD.speed.desc, "km/h");
+                speedKmh = Math.round(parseFloat(stVD.speed.value) * MILES_TO_KM * 100) / 100;
+                void this.checkAndSetValueNumber(`vehicle-state.${stVD.speed.key}`, Math.round(parseFloat(stVD.speed.value) * 100) / 100, stVD.speed.desc, "mph");
+                void this.checkAndSetValueNumber(`vehicle-state.${stVD.speed.key}_km`, speedKmh, stVD.speed.desc, "km/h");
             }
             else {
-                void this.checkAndSetValueNumber(`vehicle-state.${stVD.speed.key}`, 0, stVD.speed.desc, "km/h");
+                void this.checkAndSetValueNumber(`vehicle-state.${stVD.speed.key}`, 0, stVD.speed.desc, "mph");
+                void this.checkAndSetValueNumber(`vehicle-state.${stVD.speed.key}_km`, 0, stVD.speed.desc, "km/h");
             }
+            await this.geofence.ProcessGeofences(stVD.location.value, speedKmh);
             if (stVD.battery_level.value !== null) {
                 void this.checkAndSetValueNumber(`battery-state.${stVD.battery_level.key}`, parseFloat(stVD.battery_level.value), stVD.battery_level.desc, "%", `value.battery`);
             }
