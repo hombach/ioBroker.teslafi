@@ -59,6 +59,7 @@ Configuring the adapter is straightforward:
 
 1. Enter your TeslaFi API key in the adapter's configuration screen.
 2. Set the desired polling interval to customize how frequently data is updated.
+3. Optionally enable **Use TeslaFi encoding for data requests (encoding=1)** if your vehicle name contains special characters. This adds `encoding=1` only to data requests; vehicle commands are unchanged. The option is disabled by default, including for existing installations. Responses are still parsed as JSON without additional decoding. Whether the parameter resolves a particular name issue must be checked against TeslaFi with the option off and on.
 
 ## Geofencing (presence / enter / leave)
 
@@ -120,6 +121,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 
 ### **WORK IN PROGRESS**
 
+- (HombachC) added optional TeslaFi encoding for data requests (#45)
 - (hombach) updated ioBroker/testing
 - (hombach) updated dependencies
 - (hombach) updated axios

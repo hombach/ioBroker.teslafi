@@ -50,6 +50,18 @@
 					"xl": 6
 				},
 
+				"UseEncoding": {
+					"type": "checkbox",
+					"label": "LBL_UseEncoding",
+					"default": false,
+					"newLine": true,
+					"xs": 12,
+					"sm": 12,
+					"md": 12,
+					"lg": 12,
+					"xl": 12
+				},
+
 				"_headerDocumentation": {
 					"type": "header",
 					"text": "",

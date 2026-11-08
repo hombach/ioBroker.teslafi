@@ -180,6 +180,7 @@
     "TeslaFiAPIToken": "",
     "UpdateInterval": "60",
     "UpdateTimeout": 5000,
+    "UseEncoding": false,
     "geofences": []
   },
   "objects": [],

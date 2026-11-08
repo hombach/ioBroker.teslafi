@@ -284,7 +284,8 @@ class TeslaFiAPICaller extends projectUtils_1.ProjectUtils {
     }
     async ReadTeslaFi(command = "") {
         try {
-            const getString = `${this.queryUrl}${this.adapter.config.TeslaFiAPIToken}&command=${command}`;
+            const encoding = !command && this.adapter.config.UseEncoding === true ? "&encoding=1" : "";
+            const getString = `${this.queryUrl}${this.adapter.config.TeslaFiAPIToken}&command=${command}${encoding}`;
             this.adapter.log.debug(`sending command/request to TeslaFi: ${getString}`);
             const response = await axiosInstance.get(getString, {
                 transformResponse: r => r,

@@ -14,6 +14,7 @@
     "LBL_UpdateInterval": "Intervalo de atualização em segundos",
     "LBL_UpdateTimeout": "Tempo limite de atualização em milissegundos",
     "LBL_UseCarCommands": "Habilite o envio de comandos para o carro",
+    "LBL_UseEncoding": "Usar a codificação TeslaFi nas consultas de dados (encoding=1)",
     "TXT_donateTx": "Se você gostou deste projeto - ou apenas se sente generoso, considere comprar uma cerveja para mim. Saúde! 🍻",
     "TXT_geofenceHint": "Defina geofences com base nos nomes de local marcados pelo TeslaFi (correspondência exata). Cada local recebe estados de presença/entrada/saída com filtros de ausência e movimento para evitar acionamentos falsos."
 }
