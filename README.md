@@ -66,13 +66,13 @@ The adapter can turn TeslaFi's tagged location (`vehicle-state.location`) into r
 
 Configure your geofences in the **Geofence** tab. Each row has:
 
-| Column | Meaning |
-| --- | --- |
-| **TeslaFi location name** | Exact tag name from TeslaFi (e.g. `Home`) |
-| **Min. away (minutes)** | The car must have been away at least this long before an `enter` event may fire (blocks brief repositioning) |
-| **Require motion** | Only fire `enter` if the car actually moved while away |
-| **Motion speed threshold (km/h)** | Speed that counts as motion |
-| **Debounce (polls)** | Number of consecutive polls a change must persist before `enter`/`leave` fires (protects against GPS flicker) |
+| Column                            | Meaning                                                                                                       |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| **TeslaFi location name**         | Exact tag name from TeslaFi (e.g. `Home`)                                                                     |
+| **Min. away (minutes)**           | The car must have been away at least this long before an `enter` event may fire (blocks brief repositioning)  |
+| **Require motion**                | Only fire `enter` if the car actually moved while away                                                        |
+| **Motion speed threshold (km/h)** | Speed that counts as motion                                                                                   |
+| **Debounce (polls)**              | Number of consecutive polls a change must persist before `enter`/`leave` fires (protects against GPS flicker) |
 
 For each configured location the adapter creates:
 
@@ -92,7 +92,7 @@ Trigger a JavaScript/Blockly rule on the rising edge of `teslafi.0.geofence.Home
 
 ```javascript
 on({ id: "teslafi.0.geofence.Home.enter", val: true, ack: true }, () => {
-    setState("zigbee.0.garage_door.open", true);
+	setState("zigbee.0.garage_door.open", true);
 });
 ```
 
@@ -117,6 +117,11 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- (hombach) updated axios
+
 ### 3.1.0 (2026-10-11)
 
 - (hombach) added geofence presence/enter/leave with away- and motion-gates (#325)
