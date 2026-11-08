@@ -120,6 +120,8 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 
 ### **WORK IN PROGRESS**
 
+- (hombach) updated ioBroker/testing
+- (hombach) updated dependencies
 - (hombach) updated axios
 
 ### 3.1.0 (2026-10-11)
