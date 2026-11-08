@@ -14,6 +14,7 @@
     "LBL_UpdateInterval": "Update interval in seconds",
     "LBL_UpdateTimeout": "Update timeout in milliseconds",
     "LBL_UseCarCommands": "Enable sending commands to the car",
+    "LBL_UseEncoding": "Use TeslaFi encoding for data requests (encoding=1)",
     "TXT_donateTx": "If you enjoyed this project — or just feeling generous, consider buying me a beer. Cheers! 🍻",
     "TXT_geofenceHint": "Define geofences based on TeslaFi's tagged location names (exact match). Each location gets presence/enter/leave states with away- and motion-gates to avoid false triggers."
 }

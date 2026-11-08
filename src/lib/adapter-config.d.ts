@@ -7,6 +7,7 @@ declare global {
 			TeslaFiAPIToken: string;
 			UpdateInterval: number;
 			UpdateTimeout: number;
+			UseEncoding: boolean;
 			UseCarCommands: boolean;
 			SendWakeCommand: boolean;
 			geofences: GeofenceConfig[];
