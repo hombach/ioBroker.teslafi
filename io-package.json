@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "teslafi",
-    "version": "3.1.0",
+    "version": "3.1.1",
     "news": {
+      "3.1.1": {
+        "en": "added optional TeslaFi encoding for data requests (#45)\nupdated ioBroker/testing\nupdated dependencies\nupdated axios",
+        "de": "optionale TeslaFI-Kodierung für Datenanfragen (#45)\nioBroker/Testing aktualisiert\nNeue Abhängigkeiten\nAxios aktualisiert",
+        "ru": "добавлена дополнительная кодировка TeslaFi для запросов данных (#45)\nобновленный IOBroker/тестирование\nобновленные зависимости\nобновленные аксиомы",
+        "pt": "adicionou a codificação TeslaFI para pedidos de dados (#45)\nIOBroker/teste atualizado\nnovas dependências\naxios novos",
+        "nl": "optionele TeslaFi-codering toegevoegd voor gegevensaanvragen (#45)\nIOBroker/Testing bijgewerkt\nbijgewerkte afhankelijkheden\naxios bijgewerkt",
+        "fr": "ajout du codage TeslaFi pour les demandes de données (#45)\nIOBroker/Testing mis à jour\ndépendances mises à jour\naxios mis à jour",
+        "it": "aggiunta la codifica TeslaFI opzionale (#45)\nioBroker/test aggiornati\ndipendenze aggiornate\naxios aggiornato",
+        "es": "añadió código TeslaFi opcional para las solicitudes de datos (#45)\nactualizó IOBroker/Testing\ndependencias actualizadas\nactualizó axios",
+        "pl": "dodano opcjonalne kodowanie TeslaFi dla żądań danych (#45)\nzaktualizowano IOBroker/testowanie\nzaktualizowane zależności\nzaktualizowane axios",
+        "uk": "додано додаткове кодування TeslaFi для запитів даних (#45)\nоновлений IOBroker/тестування\nоновлені залежності\nоновлений аксіос",
+        "zh-cn": "为数据请求添加了可选的 TeslaFi 编码 (#45)\n更新了 IOBroker/测试\n更新的依赖关系\n更新的 axios"
+      },
       "3.1.0": {
         "en": "added geofence presence/enter/leave with away- and motion-gates (#325)\nfixed speed unit: `vehicle-state.speed` is now labeled mph and a new `vehicle-state.speed_km` (km/h) was added\ngeofence: harden against invalid config values, non-numeric speed and colliding/duplicate location names\nspeed unit label is now also corrected on existing installations\nswitch to iobroker testing 6.x\nupdated dependencies",
         "de": "Geofence Presence/Enter/Leave mit Away- und Motion-Gates hinzugefügt (#325)\nfeste Geschwindigkeitseinheit: `Vehicle-State.speed` heißt jetzt mph und ein neues `Vehicle-State.speed_km` (km/h)\nGeofence: Schutz vor ungültigen Konfigurationswerten, unnumerischer Geschwindigkeit und Ortsnamen\nDie Geschwindigkeitsangabe ist nun auch bei bestehenden Anlagen korrigiert\nzu iobroker test 6.x wechseln\nNeue Abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "BREAKING: adapter wymaga node.js > = 22\naktualizacji zależności",
         "uk": "BREAKING: адаптер вимагає node.js >= 22 тепер\nоновлення залежності",
         "zh-cn": "适配器需要节点 Js 22 现在\n更新依赖关系"
-      },
-      "2.0.7": {
-        "en": "switch to ES2023 code\nfix vulnerability in axios\nupdate dependencies",
-        "de": "eS2023-Code wechseln\nschwachstelle in axios beheben\naktualisierung der abhängigkeiten",
-        "ru": "переход на код ES2023\nуязвимость в axios\nобновление зависимостей",
-        "pt": "mudar para o código ES2023\ncorrigir vulnerabilidade em axios\natualizar dependências",
-        "nl": "schakel naar ES2023 code\nfix kwetsbaarheid in axios\nafhankelijkheden bijwerken",
-        "fr": "passer au code ES2023\ncorriger la vulnérabilité dans les axios\nmettre à jour les dépendances",
-        "it": "passare al codice ES2023\nfissare la vulnerabilità in assios\naggiornamento dipendenze",
-        "es": "conmutación al código ES2023\nfijar vulnerabilidad en axios\ndependencias de actualización",
-        "pl": "przełączanie na kod ES2023\nnaprawić wrażliwość w aksjozach\naktualizacji zależności",
-        "uk": "перемкніть код ES2023\nзафіксувати вразливість в осях\nоновлення залежності",
-        "zh-cn": "切换到 ES2023 代码\n在轴线中固定脆弱性\n更新依赖关系"
       }
     },
     "titleLang": {

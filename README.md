@@ -118,8 +118,7 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 3.1.1 (2026-11-11)
 
 - (HombachC) added optional TeslaFi encoding for data requests (#45)
 - (hombach) updated ioBroker/testing
@@ -148,12 +147,6 @@ If you enjoyed this project — or just feeling generous, consider buying me a b
 ### 3.0.2 (2026-06-19)
 
 - (hombach) fixed warnings by adapter checker
-
-### 3.0.1 (2026-06-05)
-
-- (hombach) upgraded TypeScript to 6.x
-- (hombach) fixed warnings by adapter checker
-- (hombach) updated dependencies
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 

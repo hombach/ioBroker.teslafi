@@ -15,6 +15,12 @@
 The TeslaFi adapter enables effortless integration of vehicle data from your TeslaFi account into the ioBroker system. Leverage this data to enhance your Tesla experience and optimize home automation workflows.
 
 ## Changelog - OLD CHANGES
+## 3.0.1 (2026-06-05)
+
+- (hombach) upgraded TypeScript to 6.x
+- (hombach) fixed warnings by adapter checker
+- (hombach) updated dependencies
+
 ## 3.0.0 (2026-05-05)
 
 - (copilot) BREAKING: adapter requires node.js >= 22 now
